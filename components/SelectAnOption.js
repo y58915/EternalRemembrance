@@ -7,11 +7,11 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default class MyComponent extends Component {
+export default class SelectAnOption extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I'm the MyComponent component</Text>
+        <Text>SelectAnOption</Text>
       </View>
     );
   }

@@ -10,11 +10,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-
-//const LoginNavigator = createStackNavigator({
-//  Login: {screen: App},
-//  CreateNewAccount: {screen: CreateNewAccount},
-//});
+import CreateNewAccount from './CreateNewAccount';
+import SelectAnOption from './SelectAnOption';
 
 class Login extends Component {
   render() {
@@ -37,24 +34,18 @@ class Login extends Component {
         <View style={styles.button}>
           <Button
             title="Sign In"
-            color="#0000FF"/>
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
         </View>
         <Text style={styles.forgot}>Forgot Password?</Text>
         <Text style={styles.noaccount}>Don't have an account?</Text>
         <View style={styles.button}>
           <Button
             title="Join Now"
-            color="#0000FF"/>
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('CreateNewAccount')}/>
         </View>
       </View>
-    );
-  }
-}
-
-class CreateNewAccount extends Component {
-  render() {
-    return (
-      <View style={styles.container}>Create New Account</View>
     );
   }
 }
@@ -63,8 +54,8 @@ const styles = StyleSheet.create({
   image: {
     marginTop: 20,
     marginBottom: 20,
-    width: 290,
-    height: 140,
+    width: 280,
+    height: 130,
   },
   container: {
     marginLeft: 60,
@@ -104,7 +95,13 @@ const styles = StyleSheet.create({
   }
 });
 
-//const App = createAppContainer(LoginNavigator);
+const LoginNavigator = createStackNavigator({
+  Login: {screen: Login},
+  CreateNewAccount: {screen: CreateNewAccount},
+  SelectAnOption: {screen: SelectAnOption},
+});
+
+const App = createAppContainer(LoginNavigator);
 
 
-export default Login;
+export default App;
