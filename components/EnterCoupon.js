@@ -11,29 +11,27 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class SelectAnOption extends Component {
+class EnterCoupon extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Select an option.</Text>
-        <Text style={styles.instructions}>I have an emblem.</Text>
-        <View style={styles.button}>
-          <Button
-            title="Create A Profile"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('EnterCoupon')}/>
-        </View>
-        <Text style={styles.instructions}>I want to purchase an emblem.</Text>
-        <View style={styles.button}>
-          <Button
-            title="Go to Store"
-            color="#0000FF"/>
-        </View>
-        <Text style={styles.instructions}> I want to explore the site.</Text>
+        <Text style={styles.welcome}>Enter your coupon code.</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' Coupon Code'>
+        </TextInput>
         <View style={styles.button}>
           <Button
             title="Continue"
-            color="#0000FF"/>
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+        </View>
+        <Text style={styles.instructions}>Don't have one?</Text>
+        <View style={styles.button}>
+          <Button
+            title="See Pricing Options"
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
         </View>
       </View>
     );
@@ -46,27 +44,30 @@ const styles = StyleSheet.create({
     marginRight: 60,
   },
   button: {
-    marginBottom: 30,
+    marginTop: 5,
   },
   welcome: {
     fontSize: 25,
     textAlign: 'center',
     marginLeft: 10,
     marginTop: 30,
-    marginBottom: 40,
+    marginBottom: 30,
     fontWeight: 'bold',
     color: '#808080',
   },
   instructions: {
     color: '#808080',
+    marginTop: 50,
     marginBottom: 5,
     fontSize: 17,
+    fontWeight: 'bold',
     textAlign: 'center',
   },
   inputblock: {
     borderWidth: 1,
-    marginBottom: 10,
-    fontSize: 20,
+    marginBottom: 15,
+    height: 45,
+    fontSize: 18,
   },
   forgot: {
     textAlign: 'center',
@@ -82,4 +83,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SelectAnOption;
+
+export default EnterCoupon;

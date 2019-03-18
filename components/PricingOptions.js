@@ -11,25 +11,26 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class CreateAProfile extends Component {
+class PricingOptions extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Enter your coupon code.</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' Coupon Code'>
-        </TextInput>
+        <Text style={styles.welcome}>Pricing Options</Text>
         <View style={styles.button}>
           <Button
-            title="Continue"
+            title="$5.99/ month (after first 6 months)"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
         </View>
-        <Text style={styles.instructions}>Don't have one?</Text>
         <View style={styles.button}>
           <Button
-            title="See Pricing Options"
+            title="Get 6 additional months for $29.99"
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="Eternal Hosting for $259.99"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
         </View>
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     marginRight: 60,
   },
   button: {
-    marginTop: 5,
+    marginBottom: 30,
   },
   welcome: {
     fontSize: 25,
@@ -57,17 +58,13 @@ const styles = StyleSheet.create({
   },
   instructions: {
     color: '#808080',
-    marginTop: 50,
     marginBottom: 5,
-    fontSize: 17,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontSize: 15,
   },
   inputblock: {
     borderWidth: 1,
-    marginBottom: 15,
-    height: 45,
-    fontSize: 18,
+    marginBottom: 10,
+    fontSize: 20,
   },
   forgot: {
     textAlign: 'center',
@@ -84,4 +81,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default CreateAProfile;
+export default PricingOptions;

@@ -12,7 +12,8 @@ import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import CreateNewAccount from './CreateNewAccount';
 import SelectAnOption from './SelectAnOption';
-import CreateAProfile from './CreateAProfile';
+import EnterCoupon from './EnterCoupon';
+import PricingOptions from './PricingOptions';
 
 class Login extends Component {
   render() {
@@ -108,7 +109,8 @@ const LoginContainer = createStackNavigator({
   Login: {screen: Login},
   CreateNewAccount: {screen: CreateNewAccount},
   SelectAnOption: {screen: SelectAnOption},
-  CreateAProfile: {screen: CreateAProfile},
+  EnterCoupon: {screen: EnterCoupon},
+  PricingOptions: {screen: PricingOptions},
 });
 
 const App = createAppContainer(LoginContainer);
