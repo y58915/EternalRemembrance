@@ -24,16 +24,19 @@ class CreateNewAccount extends Component {
         <Text style={styles.instructions}>Email</Text>
         <TextInput
           style={styles.inputblock}
+          keyboardType= 'email-address'
           placeholder=' johndoe@mail.com'>
         </TextInput>
         <Text style={styles.instructions}>Password</Text>
         <TextInput
           style={styles.inputblock}
+          secureTextEntry= {true}
           placeholder=' ••••••'>
         </TextInput>
         <Text style={styles.instructions}>Confirm Password</Text>
         <TextInput
           style={styles.inputblock}
+          secureTextEntry= {true}
           placeholder=' ••••••'>
         </TextInput>
         <View style={styles.button}>

@@ -27,12 +27,14 @@ class Login extends Component {
         <Text style={styles.welcome}>Log In</Text>
         <Text style={styles.instructions}>Username</Text>
         <TextInput
+          keyboardType= 'email-address'
           style={styles.inputblock}
           placeholder=' johndoe@mail.com'>
         </TextInput>
         <Text style={styles.instructions}>Password</Text>
         <TextInput
           style={styles.inputblockpassword}
+          secureTextEntry= {true}
           placeholder=' ••••••'>
         </TextInput>
         <View style={styles.button}>
