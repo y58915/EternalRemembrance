@@ -16,9 +16,6 @@ class CreateNewAccount extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.image}
-          source={require('../resources/logo.jpg')}/>
         <Text style={styles.welcome}>Create New Account</Text>
         <Text style={styles.instructions}>Full Name</Text>
         <TextInput
@@ -52,12 +49,6 @@ class CreateNewAccount extends Component {
 }
 
 const styles = StyleSheet.create({
-  image: {
-    marginTop: 20,
-    marginBottom: 20,
-    width: 280,
-    height: 130,
-  },
   container: {
     marginLeft: 60,
     marginRight: 60,
@@ -66,9 +57,11 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 25,
     textAlign: 'center',
-    margin: 10,
+    marginLeft: 10,
+    marginTop: 30,
+    marginBottom: 20,
     fontWeight: 'bold',
     color: '#808080',
   },
@@ -79,8 +72,9 @@ const styles = StyleSheet.create({
   },
   inputblock: {
     borderWidth: 1,
-    marginBottom: 10,
-    fontSize: 20,
+    marginBottom: 20,
+    height: 45,
+    fontSize: 18,
   },
   forgot: {
     textAlign: 'center',

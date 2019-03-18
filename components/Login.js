@@ -29,7 +29,7 @@ class Login extends Component {
         </TextInput>
         <Text style={styles.instructions}>Password</Text>
         <TextInput
-          style={styles.inputblock}
+          style={styles.inputblockpassword}
           placeholder=' ••••••'>
         </TextInput>
         <View style={styles.button}>
@@ -52,10 +52,11 @@ class Login extends Component {
 
 const styles = StyleSheet.create({
   image: {
+    marginLeft: 15,
     marginTop: 20,
     marginBottom: 20,
-    width: 280,
-    height: 130,
+    width: 260,
+    height: 115,
   },
   container: {
     marginLeft: 60,
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 25,
     textAlign: 'center',
     margin: 10,
     fontWeight: 'bold',
@@ -76,10 +77,18 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontSize: 15,
   },
+  inputblockpassword: {
+    borderWidth: 1,
+    marginBottom: 10,
+    height: 40,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   inputblock: {
     borderWidth: 1,
     marginBottom: 10,
-    fontSize: 20,
+    height: 45,
+    fontSize: 18,
   },
   forgot: {
     textAlign: 'center',
@@ -89,7 +98,7 @@ const styles = StyleSheet.create({
   noaccount: {
     fontSize: 20,
     textAlign: 'center',
-    marginTop: 50,
+    marginTop: 30,
     fontWeight: 'bold',
     color: '#808080',
   }
