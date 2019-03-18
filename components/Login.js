@@ -14,6 +14,8 @@ import CreateNewAccount from './CreateNewAccount';
 import SelectAnOption from './SelectAnOption';
 import EnterCoupon from './EnterCoupon';
 import PricingOptions from './PricingOptions';
+import FreeHosting from './FreeHosting';
+import Empty from './Empty';
 
 class Login extends Component {
   render() {
@@ -36,9 +38,12 @@ class Login extends Component {
         <View style={styles.button}>
           <Button
             title="Sign In"
-            color="#0000FF"/>
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.forgot}>Forgot Password?</Text>
+        <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('Empty')}>
+          Forgot Password?
+        </Text>
         <Text style={styles.noaccount}>Don't have an account?</Text>
         <View style={styles.button}>
           <Button
@@ -95,6 +100,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textDecorationLine: 'underline',
     marginTop: 10,
+    fontSize: 15,
+    color: 'blue',
   },
   noaccount: {
     fontSize: 20,
@@ -111,6 +118,8 @@ const LoginContainer = createStackNavigator({
   SelectAnOption: {screen: SelectAnOption},
   EnterCoupon: {screen: EnterCoupon},
   PricingOptions: {screen: PricingOptions},
+  FreeHosting: {screen: FreeHosting},
+  Empty: {screen: Empty},
 });
 
 const App = createAppContainer(LoginContainer);

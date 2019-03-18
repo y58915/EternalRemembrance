@@ -24,7 +24,7 @@ class EnterCoupon extends Component {
           <Button
             title="Continue"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+            onPress={() => this.props.navigation.navigate('FreeHosting')}/>
         </View>
         <Text style={styles.instructions}>Don't have one?</Text>
         <View style={styles.button}>
