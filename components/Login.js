@@ -12,6 +12,7 @@ import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import CreateNewAccount from './CreateNewAccount';
 import SelectAnOption from './SelectAnOption';
+import CreateAProfile from './CreateAProfile';
 
 class Login extends Component {
   render() {
@@ -34,8 +35,7 @@ class Login extends Component {
         <View style={styles.button}>
           <Button
             title="Sign In"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+            color="#0000FF"/>
         </View>
         <Text style={styles.forgot}>Forgot Password?</Text>
         <Text style={styles.noaccount}>Don't have an account?</Text>
@@ -95,13 +95,14 @@ const styles = StyleSheet.create({
   }
 });
 
-const LoginNavigator = createStackNavigator({
+const LoginContainer = createStackNavigator({
   Login: {screen: Login},
   CreateNewAccount: {screen: CreateNewAccount},
   SelectAnOption: {screen: SelectAnOption},
+  CreateAProfile: {screen: CreateAProfile},
 });
 
-const App = createAppContainer(LoginNavigator);
+const App = createAppContainer(LoginContainer);
 
 
 export default App;

@@ -10,6 +10,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import SelectAnOption from './SelectAnOption';
 
 class CreateNewAccount extends Component {
   render() {

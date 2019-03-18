@@ -10,6 +10,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import CreateAProfile from './CreateAProfile';
 
 class SelectAnOption extends Component {
   render() {
@@ -27,15 +28,13 @@ class SelectAnOption extends Component {
         <View style={styles.button}>
           <Button
             title="Go to Store"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+            color="#0000FF"/>
         </View>
         <Text style={styles.welcome}> I want to explore the site.</Text>
         <View style={styles.button}>
           <Button
             title="Continue"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateNewAccount')}/>
+            color="#0000FF"/>
         </View>
       </View>
     );
@@ -86,6 +85,5 @@ const styles = StyleSheet.create({
     color: '#808080',
   }
 });
-
 
 export default SelectAnOption;
