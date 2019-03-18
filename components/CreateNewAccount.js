@@ -95,11 +95,4 @@ const styles = StyleSheet.create({
   }
 });
 
-const newAccountNavigator = createStackNavigator({
-  CreateNewAccount: {screen: CreateNewAccount},
-});
-
-const App = createAppContainer(newAccountNavigator);
-
-
-export default App;
+export default CreateNewAccount;

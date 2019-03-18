@@ -83,11 +83,5 @@ const styles = StyleSheet.create({
   }
 });
 
-const createAProfileNavigator = createStackNavigator({
-  CreateAProfile: {screen: CreateAProfile},
-});
 
-const App = createAppContainer(createAProfileNavigator);
-
-
-export default App;
+export default CreateAProfile;

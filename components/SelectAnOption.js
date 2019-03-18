@@ -87,11 +87,5 @@ const styles = StyleSheet.create({
   }
 });
 
-const selectionNavigator = createStackNavigator({
-  SelectAnOption: {screen: SelectAnOption},
-});
 
-const App = createAppContainer(selectionNavigator);
-
-
-export default App;
+export default SelectAnOption;
