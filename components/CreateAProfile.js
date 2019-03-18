@@ -11,31 +11,27 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class SelectAnOption extends Component {
+class CreateAProfile extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Select an option.</Text>
-        <Text style={styles.welcome}>I have an emblem.</Text>
-        <View style={styles.button}>
-          <Button
-            title="Create A Profile"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateAProfile')}/>
-        </View>
-        <Text style={styles.welcome}>I want to purchase an emblem.</Text>
-        <View style={styles.button}>
-          <Button
-            title="Go to Store"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
-        </View>
-        <Text style={styles.welcome}> I want to explore the site.</Text>
+        <Text style={styles.welcome}>Enter your coupon code.</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' Coupon Code'>
+        </TextInput>
         <View style={styles.button}>
           <Button
             title="Continue"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateNewAccount')}/>
+            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+        </View>
+        <Text style={styles.instructions}>Don't have one?</Text>
+        <View style={styles.button}>
+          <Button
+            title="See Pricing Options"
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
         </View>
       </View>
     );
@@ -87,11 +83,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const selectionNavigator = createStackNavigator({
-  SelectAnOption: {screen: SelectAnOption},
+const createAProfileNavigator = createStackNavigator({
+  CreateAProfile: {screen: CreateAProfile},
 });
 
-const App = createAppContainer(selectionNavigator);
+const App = createAppContainer(createAProfileNavigator);
 
 
 export default App;

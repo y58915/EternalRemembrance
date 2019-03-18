@@ -11,31 +11,39 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class SelectAnOption extends Component {
+class Explore extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Select an option.</Text>
-        <Text style={styles.welcome}>I have an emblem.</Text>
+        <Image
+          style={styles.image}
+          source={require('../resources/logo.jpg')}/>
+        <Text style={styles.welcome}>Create New Account</Text>
+        <Text style={styles.instructions}>Full Name</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' John Doe'>
+        </TextInput>
+        <Text style={styles.instructions}>Email</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' johndoe@mail.com'>
+        </TextInput>
+        <Text style={styles.instructions}>Password</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' ••••••'>
+        </TextInput>
+        <Text style={styles.instructions}>Confirm Password</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' ••••••'>
+        </TextInput>
         <View style={styles.button}>
           <Button
-            title="Create A Profile"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateAProfile')}/>
-        </View>
-        <Text style={styles.welcome}>I want to purchase an emblem.</Text>
-        <View style={styles.button}>
-          <Button
-            title="Go to Store"
+            title="Sign Up"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
-        </View>
-        <Text style={styles.welcome}> I want to explore the site.</Text>
-        <View style={styles.button}>
-          <Button
-            title="Continue"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateNewAccount')}/>
         </View>
       </View>
     );
@@ -87,11 +95,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const selectionNavigator = createStackNavigator({
-  SelectAnOption: {screen: SelectAnOption},
+const newAccountNavigator = createStackNavigator({
+  CreateNewAccount: {screen: CreateNewAccount},
 });
 
-const App = createAppContainer(selectionNavigator);
+const App = createAppContainer(newAccountNavigator);
 
 
 export default App;
