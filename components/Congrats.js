@@ -28,7 +28,7 @@ class Congrats extends Component {
           <Button
             title="Create Profile"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('CreateProfile1')}/>
         </View>
       </View>
     );

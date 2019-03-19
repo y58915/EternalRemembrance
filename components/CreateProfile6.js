@@ -53,7 +53,7 @@ class CreateProfile6 extends Component {
           <Button
             title="Finish"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
         </View>
       </View>
     );

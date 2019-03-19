@@ -16,26 +16,38 @@ class CreateProfile1 extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-        Welcome! {"\n"}
-        You are receiving {"\n"}
-        6 months of free hosting.</Text>
-        <Text style={styles.instructions}>Upgrade now for a discount.</Text>
+        Required Loved One's Information </Text>
+        <Text style={styles.instructions}>First Name</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' John Doe'>
+        </TextInput>
+        <Text style={styles.instructions}>Middle Name</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' John Doe'>
+        </TextInput>
+        <Text style={styles.instructions}>Last Name</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' John Doe'>
+        </TextInput>
+        <Text style={styles.instructions}>Date of Birth</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' xx/xx/xxxx'>
+        </TextInput>
+        <Text style={styles.instructions}>Date of Death</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' xx/xx/xxxx'>
+        </TextInput>
         <View style={styles.button}>
           <Button
-            title="Get 6 additional months for $29.99"
+            title="Continue"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('CreateProfile2')}/>
         </View>
-        <Text style={styles.or}>OR</Text>
-        <View style={styles.button}>
-          <Button
-            title="Eternal Hosting for $259.99"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
-        </View>
-        <Text style={styles.without} onPress={() => this.props.navigation.navigate('Congrats')}>
-          Continue without upgrade
-        </Text>
       </View>
     );
   }
@@ -59,9 +71,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#808080',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#808080',
+  inputblock: {
+    borderWidth: 1,
+    marginBottom: 20,
+    height: 45,
     fontSize: 18,
   },
   inputblock: {

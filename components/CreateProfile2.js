@@ -11,31 +11,35 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class FreeHosting extends Component {
+class CreateProfile2 extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-        Welcome! {"\n"}
-        You are receiving {"\n"}
-        6 months of free hosting.</Text>
-        <Text style={styles.instructions}>Upgrade now for a discount.</Text>
+        Administrator Rights </Text>
+        <Text style={styles.instructions}>Invite administrators to contribute and have special access to this page.</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' xxxx@gmail.com'>
+        </TextInput>
         <View style={styles.button}>
           <Button
-            title="Get 6 additional months for $29.99"
+            title="Invite"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.or}>OR</Text>
         <View style={styles.button}>
           <Button
-            title="Eternal Hosting for $259.99"
+            title="Add New Admin"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.without} onPress={() => this.props.navigation.navigate('Congrats')}>
-          Continue without upgrade
-        </Text>
+        <View style={styles.button}>
+          <Button
+            title="Continue"
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('CreateProfile3')}/>
+        </View>
       </View>
     );
   }
@@ -86,4 +90,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default FreeHosting;
+export default CreateProfile2;
