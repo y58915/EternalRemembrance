@@ -21,11 +21,8 @@ class Congrats extends Component {
         has been stored.
         </Text>
         <Text style={styles.detail}>
-          You may now begin {"\n"}
-          creating your loved one's {"\n"}
-          profile and sharing {"\n"}
-          loving memories that {"\n"}
-          last forever.
+          You may now begin creating your loved one's profile
+          and sharing loving memories that last forever.
         </Text>
         <View style={styles.button}>
           <Button
@@ -44,10 +41,10 @@ const styles = StyleSheet.create({
     marginRight: 60,
   },
   button: {
-    marginTop: 15,
+    marginTop: 25,
   },
   welcome: {
-    fontSize: 25,
+    fontSize: 22,
     textAlign: 'center',
     marginLeft: 10,
     marginTop: 30,
