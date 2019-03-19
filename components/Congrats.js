@@ -16,7 +16,7 @@ class Congrats extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-        Coongrats! {"\n"}
+        Congrats! {"\n"}
         Your payment information {"\n"}
         has been stored.
         </Text>
