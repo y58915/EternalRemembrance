@@ -20,19 +20,19 @@ class PricingOptions extends Component {
           <Button
             title=" $5.99 / month (after first 6 months)"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+            onPress={() => this.props.navigation.navigate('Subscription')}/>
         </View>
         <View style={styles.button}>
         <Button
           title=" Get 6 additional months for $29.99"
           color="#0000FF"
-          onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+          onPress={() => this.props.navigation.navigate('Subscription')}/>
       </View>
         <View style={styles.button}>
           <Button
             title=" Eternal Hosting (10 years) for $259.99"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+            onPress={() => this.props.navigation.navigate('Subscription')}/>
         </View>
       </View>
     );
