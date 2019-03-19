@@ -30,7 +30,7 @@ class PricingOptions extends Component {
       </View>
         <View style={styles.button}>
           <Button
-            title=" Eternal Hosting (10 years) for $259.99"
+            title=" Eternal Hosting for $259.99"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Subscription')}/>
         </View>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginRight: 60,
   },
   button: {
-    marginTop: 5,
+    marginTop: 25,
   },
   welcome: {
     fontSize: 20,

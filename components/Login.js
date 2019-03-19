@@ -25,9 +25,11 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.image}
-          source={require('../resources/logo.jpg')}/>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Image
+            style={styles.image}
+            source={require('../resources/logo.jpg')}/>
+        </View>
         <Text style={styles.welcome}>Log In</Text>
         <Text style={styles.instructions}>Username</Text>
         <TextInput
@@ -64,7 +66,6 @@ class Login extends Component {
 
 const styles = StyleSheet.create({
   image: {
-    marginLeft: 15,
     marginTop: 20,
     marginBottom: 20,
     width: 260,
