@@ -53,7 +53,7 @@ class CreateProfile4 extends Component {
           <Button
             title="Continue"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('CreateProfile5')}/>
         </View>
       </View>
     );

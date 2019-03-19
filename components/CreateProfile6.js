@@ -8,34 +8,53 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class FreeHosting extends Component {
+class CreateProfile6 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-        Welcome! {"\n"}
-        You are receiving {"\n"}
-        6 months of free hosting.</Text>
-        <Text style={styles.instructions}>Upgrade now for a discount.</Text>
+        <View style={{flexDirection: 'row', marginTop: 30, marginBottom: 30}}>
+          <Text style={styles.detail}>Key Dates</Text>
+          <Text style={styles.optional}> (optional)</Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{flex: 1}}>
+            <Text style={styles.instructions}>Month</Text>
+            <TextInput
+              style={styles.inputblockdate}
+              placeholder = ' April'/>
+          </View>
+          <View style={{flex: 1}}>
+            <Text style={styles.instructions}>Day</Text>
+            <TextInput
+              style={styles.inputblockdate}
+              placeholder = ' 23'/>
+          </View>
+          <View style={{flex: 1}}>
+            <Text style={styles.instructions}>Year</Text>
+            <TextInput
+              style={styles.inputblockdate}
+              placeholder = ' 1925'/>
+          </View>
+        </View>
+        <Text style={styles.instructions}>Description</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder = 'Anniversary'/>
         <View style={styles.button}>
           <Button
-            title="Get 6 additional months for $29.99"
+            title="Add Key Date"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.or}>OR</Text>
-        <View style={styles.button}>
+        <View style={styles.buttonbottom}>
           <Button
-            title="Eternal Hosting for $259.99"
+            title="Finish"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.without} onPress={() => this.props.navigation.navigate('Congrats')}>
-          Continue without upgrade
-        </Text>
       </View>
     );
   }
@@ -50,40 +69,48 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    marginLeft: 10,
-    marginTop: 30,
-    marginBottom: 30,
+  detail: {
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#808080',
   },
   instructions: {
+    color: '#808080',
+    fontSize: 13,
+  },
+  buttonbottom: {
+    marginTop: 250,
+  },
+  method: {
+    color: '#808080',
+    fontSize: 17,
+  },
+  optional: {
+    color: '#808080',
+    fontSize: 17,
+  },
+  later: {
     textAlign: 'center',
     color: '#808080',
-    fontSize: 18,
+    fontSize: 15,
+    marginTop: 20,
   },
   inputblock: {
     borderWidth: 1,
-    marginBottom: 10,
-    fontSize: 20,
+    marginTop: 4,
+    marginBottom: 6,
+    height: 45,
+    fontSize: 18,
   },
-  or: {
-    fontSize: 20,
-    textAlign: 'center',
-    marginLeft: 10,
-    fontWeight: 'bold',
-    color: '#808080',
+  inputblockdate: {
+    borderWidth: 1,
+    marginTop: 4,
+    marginBottom: 6,
+    marginRight: 20,
+    height: 45,
+    fontSize: 18,
   },
-  without: {
-    textAlign: 'center',
-    textDecorationLine: 'underline',
-    marginTop: 20,
-    fontSize: 15,
-    color: 'blue',
-  }
 });
 
 
-export default FreeHosting;
+export default CreateProfile6;
