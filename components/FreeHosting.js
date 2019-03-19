@@ -33,7 +33,7 @@ class FreeHosting extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.without} onPress={() => this.props.navigation.navigate('Empty')}>
+        <Text style={styles.without} onPress={() => this.props.navigation.navigate('Congrats')}>
           Continue without upgrade
         </Text>
       </View>

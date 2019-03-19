@@ -11,54 +11,25 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image, CheckBox} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class Subscription extends Component {
+class Congrats extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Hosting Subscription</Text>
-        <Text style={styles.detail}>
-          $5.99/month {"\n"}
-          (after first 6 month expire)
+        <Text style={styles.welcome}>
+        Coongrats! {"\n"}
+        Your payment information {"\n"}
+        has been stored.
         </Text>
-        <Text style={styles.cardinfo}>Card Information</Text>
-        <Text style={styles.instructions}>Card Number</Text>
-        <TextInput
-          style={styles.inputblock}
-          keyboardType= 'number-pad'
-          placeholder= ' 1234 5678 9101 1213'>
-        </TextInput>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{flex: 1}}>
-            <Text style={styles.instructions}>Expiry Date</Text>
-            <TextInput
-              style={styles.inputblockExpiry}
-              keyboardType= 'number-pad'
-              placeholder= ' 05/21'
-              maxLength={4}/>
-          </View>
-          <View style={{flex: 1}}>
-            <Text style={styles.instructions}>CVV</Text>
-            <TextInput
-              style={styles.inputblockCVV}
-              keyboardType= 'number-pad'
-              placeholder= ' 123'
-              maxLength={3}/>
-          </View>
-        </View>
-        <Text style={styles.instructions}>Cardholder Name</Text>
-        <View>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' John Doe'>
-        </TextInput>
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <CheckBox style={{marginTop: 2}}/>
-          <Text style={styles.instructions}>SAVE CARD</Text>
-        </View>
+        <Text style={styles.detail}>
+          You may now begin {"\n"}
+          creating your loved one's {"\n"}
+          profile and sharing {"\n"}
+          loving memories that {"\n"}
+          last forever.
+        </Text>
         <View style={styles.button}>
           <Button
-            title="Confirm"
+            title="Create Profile"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
@@ -124,4 +95,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Subscription;
+export default Congrats;
