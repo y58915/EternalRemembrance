@@ -20,6 +20,11 @@ import ForgotPassword from './ForgotPassword';
 import Subscription from './Subscription';
 import Congrats from './Congrats';
 import CreateProfile1 from './CreateProfile1';
+import CreateProfile2 from './CreateProfile2';
+import CreateProfile3 from './CreateProfile3';
+import CreateProfile4 from './CreateProfile4';
+import CreateProfile5 from './CreateProfile5';
+import CreateProfile6 from './CreateProfile6';
 
 class Login extends Component {
   render() {
@@ -47,7 +52,7 @@ class Login extends Component {
           <Button
             title="Sign In"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Subscription')}/>
+            onPress={() => this.props.navigation.navigate('CreateProfile4')}/>
         </View>
         <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('ForgotPassword')}>
           Forgot Password?
@@ -131,6 +136,11 @@ const LoginContainer = createStackNavigator({
   Subscription: {screen: Subscription},
   Congrats: {screen: Congrats},
   CreateProfile1: {screen: CreateProfile1},
+  CreateProfile2: {screen: CreateProfile2},
+  CreateProfile3: {screen: CreateProfile3},
+  CreateProfile4: {screen: CreateProfile4},
+  CreateProfile5: {screen: CreateProfile5},
+  CreateProfile6: {screen: CreateProfile6},
 });
 
 const App = createAppContainer(LoginContainer);
