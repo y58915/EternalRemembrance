@@ -11,7 +11,7 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import PricingOptions from './PricingOptions';
-import FreeHostingCouponPage from './FreeHostingCouponPage';
+import FreeHostingCouponPage from './FreeHosting';
 
 class EnterCoupon extends Component {
   render() {
@@ -26,11 +26,7 @@ class EnterCoupon extends Component {
           <Button
             title="Continue"
             color="#0000FF"
-<<<<<<< HEAD:components/CreateAProfile.js
-            onPress={() => this.props.navigation.navigate('FreeHostingCouponPage')}/>
-=======
             onPress={() => this.props.navigation.navigate('FreeHosting')}/>
->>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c:components/EnterCoupon.js
         </View>
         <Text style={styles.regular}>Don't have one?</Text>
         <View style={styles.button}>
@@ -94,17 +90,5 @@ const styles = StyleSheet.create({
     color: '#808080',
   }
 });
-
-<<<<<<< HEAD:components/CreateAProfile.js
-const createAProfileNavigator = createStackNavigator({
-  CreateAProfile: {screen: CreateAProfile},
-  FreeHostingCouponPage: {screen: FreeHostingCouponPage},
-  PricingOptions: {screen: PricingOptions},
-});
-
-const App = createAppContainer(createAProfileNavigator);
-
-=======
->>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c:components/EnterCoupon.js
 
 export default EnterCoupon;

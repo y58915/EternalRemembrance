@@ -10,7 +10,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import CreateAProfile from './CreateAProfile';
+import CreateAProfile from './EnterCoupon';
 import PricingOptions from './PricingOptions';
 
 class SelectAnOption extends Component {
@@ -30,11 +30,7 @@ class SelectAnOption extends Component {
           <Button
             title="Go to Store"
             color="#0000FF"
-<<<<<<< HEAD
-            onPress={() => this.props.navigation.navigate('GoToStore')}/>
-=======
             onPress={() => this.props.navigation.navigate('Empty')}/>
->>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c
         </View>
         <Text style={styles.instructions}> I want to explore the site.</Text>
         <View style={styles.button}>
@@ -90,17 +86,4 @@ const styles = StyleSheet.create({
   }
 });
 
-<<<<<<< HEAD
-const selectionNavigator = createStackNavigator({
-  SelectAnOption: {screen: SelectAnOption},
-  CreateAProfile: {screen: CreateAProfile},
-  PricingOptions: {screen: PricingOptions},
-});
-
-const App = createAppContainer(selectionNavigator);
-
-
-export default App;
-=======
 export default SelectAnOption;
->>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c

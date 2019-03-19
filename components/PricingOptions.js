@@ -90,14 +90,4 @@ const styles = StyleSheet.create({
   }
 });
 
-<<<<<<< HEAD:components/PricingOptions.js
-const PricingOptionsNavigator = createStackNavigator({
-  PricingOptions: {screen: PricingOptions},
-});
-
-const App = createAppContainer(PricingOptionsNavigator);
-
-=======
->>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c:components/Explore.js
-
-export default Explore;
+export default PricingOptions;

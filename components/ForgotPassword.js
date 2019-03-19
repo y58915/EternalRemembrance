@@ -10,29 +10,30 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import Login from './Login';
 
-class PricingOptions extends Component {
+class ForgotPassword extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Pricing Options</Text>
+        <Text style={styles.welcome}>Forgot Password</Text>
+        <Text style={styles.instructions}>Password</Text>
+        <TextInput
+          style={styles.inputblockpassword}
+          secureTextEntry= {true}
+          placeholder=' ••••••'>
+        </TextInput>
+        <Text style={styles.instructions}>Confirm Password</Text>
+        <TextInput
+          style={styles.inputblockpassword}
+          secureTextEntry= {true}
+          placeholder=' ••••••'>
+        </TextInput>
         <View style={styles.button}>
           <Button
-            title="$5.99/ month (after first 6 months)"
+            title="Confirm New Password"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="Get 6 additional months for $29.99"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="Eternal Hosting for $259.99"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('Login')}/>
         </View>
       </View>
     );
@@ -40,19 +41,24 @@ class PricingOptions extends Component {
 }
 
 const styles = StyleSheet.create({
+  image: {
+    marginLeft: 15,
+    marginTop: 20,
+    marginBottom: 20,
+    width: 260,
+    height: 115,
+  },
   container: {
     marginLeft: 60,
     marginRight: 60,
   },
   button: {
-    marginBottom: 30,
+    marginTop: 5,
   },
   welcome: {
     fontSize: 25,
     textAlign: 'center',
-    marginLeft: 10,
-    marginTop: 30,
-    marginBottom: 30,
+    margin: 10,
     fontWeight: 'bold',
     color: '#808080',
   },
@@ -61,24 +67,33 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontSize: 15,
   },
+  inputblockpassword: {
+    borderWidth: 1,
+    marginBottom: 10,
+    height: 40,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   inputblock: {
     borderWidth: 1,
     marginBottom: 10,
-    fontSize: 20,
+    height: 45,
+    fontSize: 18,
   },
   forgot: {
     textAlign: 'center',
     textDecorationLine: 'underline',
     marginTop: 10,
+    fontSize: 15,
+    color: 'blue',
   },
   noaccount: {
     fontSize: 20,
     textAlign: 'center',
-    marginTop: 50,
+    marginTop: 30,
     fontWeight: 'bold',
     color: '#808080',
   }
 });
 
-
-export default PricingOptions;
+export default ForgotPassword;

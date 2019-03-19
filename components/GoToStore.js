@@ -10,9 +10,9 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import FreeHostingCouponPage from './FreeHostingCouponPage';
+import FreeHostingCouponPage from './FreeHosting';
 import PricingOptions from './PricingOptions';
-import CreateAProfile from './CreateAProfile';
+import CreateAProfile from './EnterCoupon';
 
 class GoToStore extends Component {
   render() {
@@ -27,7 +27,7 @@ class GoToStore extends Component {
         <Button
           title="Continue"
           color="#0000FF"
-          onPress={() => this.props.navigation.navigate('FreeHostingCouponPage')}/>
+          onPress={() => this.props.navigation.navigate('FreeHosting')}/>
       </View>
         <Text style={styles.instructions}>Don't have one?</Text>
         <View style={styles.button}>
@@ -100,16 +100,15 @@ const styles = StyleSheet.create({
   }
 });
 
-<<<<<<< HEAD
+
 const StoreNavigator = createStackNavigator({
   GoToStore: {screen: GoToStore},
   FreeHostingCouponPage: {screen: FreeHostingCouponPage},
   PricingOptions: {screen: PricingOptions},
-  CreateAProfile: {screen: CreateAProfile},
+  EnterCoupon: {screen: EnterCoupon},
 });
 
 const App = createAppContainer(StoreNavigator);
-=======
->>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c
+
 
 export default GoToStore;

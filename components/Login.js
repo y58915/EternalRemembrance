@@ -16,6 +16,7 @@ import EnterCoupon from './EnterCoupon';
 import PricingOptions from './PricingOptions';
 import FreeHosting from './FreeHosting';
 import Empty from './Empty';
+import ForgotPassword from './ForgotPassword';
 
 class Login extends Component {
   render() {
@@ -43,7 +44,7 @@ class Login extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('Empty')}>
+        <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('ForgotPassword')}>
           Forgot Password?
         </Text>
         <Text style={styles.noaccount}>Don't have an account?</Text>
@@ -122,6 +123,7 @@ const LoginContainer = createStackNavigator({
   PricingOptions: {screen: PricingOptions},
   FreeHosting: {screen: FreeHosting},
   Empty: {screen: Empty},
+  ForgotPassword: {screen: ForgotPassword},
 });
 
 const App = createAppContainer(LoginContainer);
