@@ -60,7 +60,7 @@ class Subscription extends Component {
           <Button
             title="Confirm"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('Congrats')}/>
         </View>
       </View>
     );

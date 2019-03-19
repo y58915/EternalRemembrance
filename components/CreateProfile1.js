@@ -11,7 +11,7 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class FreeHosting extends Component {
+class CreateProfile1 extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default FreeHosting;
+export default CreateProfile1;
