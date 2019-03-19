@@ -10,6 +10,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import CreateAProfile from './EnterCoupon';
+import PricingOptions from './PricingOptions';
 
 class SelectAnOption extends Component {
   render() {

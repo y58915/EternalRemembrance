@@ -10,6 +10,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import PricingOptions from './PricingOptions';
+import FreeHostingCouponPage from './FreeHosting';
 
 class EnterCoupon extends Component {
   render() {
@@ -26,7 +28,7 @@ class EnterCoupon extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('FreeHosting')}/>
         </View>
-        <Text style={styles.instructions}>Don't have one?</Text>
+        <Text style={styles.regular}>Don't have one?</Text>
         <View style={styles.button}>
           <Button
             title="See Pricing Options"
@@ -63,6 +65,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  regular: {
+    marginTop: 15,
+    color:'#808080',
+    textAlign: 'center',
+    fontSize: 15,
+  },
   inputblock: {
     borderWidth: 1,
     marginBottom: 15,
@@ -82,6 +90,5 @@ const styles = StyleSheet.create({
     color: '#808080',
   }
 });
-
 
 export default EnterCoupon;

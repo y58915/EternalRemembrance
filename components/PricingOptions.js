@@ -18,21 +18,21 @@ class PricingOptions extends Component {
         <Text style={styles.welcome}>Pricing Options</Text>
         <View style={styles.button}>
           <Button
-            title="$5.99/ month (after first 6 months)"
+            title=" $5.99 / month (after first 6 months)"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
         </View>
         <View style={styles.button}>
-          <Button
-            title="Get 6 additional months for $29.99"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
-        </View>
+        <Button
+          title=" Get 6 additional months for $29.99"
+          color="#0000FF"
+          onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+      </View>
         <View style={styles.button}>
           <Button
-            title="Eternal Hosting for $259.99"
+            title=" Eternal Hosting (10 years) for $259.99"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
         </View>
       </View>
     );
@@ -40,25 +40,35 @@ class PricingOptions extends Component {
 }
 
 const styles = StyleSheet.create({
+  image: {
+    marginTop: 20,
+    marginBottom: 20,
+    width: 280,
+    height: 130,
+  },
   container: {
     marginLeft: 60,
     marginRight: 60,
   },
   button: {
-    marginBottom: 30,
+    marginTop: 5,
   },
   welcome: {
-    fontSize: 25,
+    fontSize: 20,
     textAlign: 'center',
-    marginLeft: 10,
-    marginTop: 30,
-    marginBottom: 30,
+    margin: 10,
     fontWeight: 'bold',
     color: '#808080',
   },
   instructions: {
     color: '#808080',
     marginBottom: 5,
+    fontSize: 15,
+  },
+  regular: {
+    marginTop: 15,
+    color:'#808080',
+    textAlign: 'center',
     fontSize: 15,
   },
   inputblock: {
@@ -79,6 +89,5 @@ const styles = StyleSheet.create({
     color: '#808080',
   }
 });
-
 
 export default PricingOptions;
