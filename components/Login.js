@@ -12,6 +12,10 @@ import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import CreateNewAccount from './CreateNewAccount';
 import SelectAnOption from './SelectAnOption';
+import EnterCoupon from './EnterCoupon';
+import PricingOptions from './PricingOptions';
+import FreeHosting from './FreeHosting';
+import Empty from './Empty';
 
 class Login extends Component {
   render() {
@@ -23,21 +27,25 @@ class Login extends Component {
         <Text style={styles.welcome}>Log In</Text>
         <Text style={styles.instructions}>Username</Text>
         <TextInput
+          keyboardType= 'email-address'
           style={styles.inputblock}
           placeholder=' johndoe@mail.com'>
         </TextInput>
         <Text style={styles.instructions}>Password</Text>
         <TextInput
-          style={styles.inputblock}
+          style={styles.inputblockpassword}
+          secureTextEntry= {true}
           placeholder=' ••••••'>
         </TextInput>
         <View style={styles.button}>
           <Button
             title="Sign In"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+            onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.forgot}>Forgot Password?</Text>
+        <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('Empty')}>
+          Forgot Password?
+        </Text>
         <Text style={styles.noaccount}>Don't have an account?</Text>
         <View style={styles.button}>
           <Button
@@ -52,10 +60,11 @@ class Login extends Component {
 
 const styles = StyleSheet.create({
   image: {
+    marginLeft: 15,
     marginTop: 20,
     marginBottom: 20,
-    width: 280,
-    height: 130,
+    width: 260,
+    height: 115,
   },
   container: {
     marginLeft: 60,
@@ -65,7 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 25,
     textAlign: 'center',
     margin: 10,
     fontWeight: 'bold',
@@ -76,32 +85,46 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontSize: 15,
   },
+  inputblockpassword: {
+    borderWidth: 1,
+    marginBottom: 10,
+    height: 40,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   inputblock: {
     borderWidth: 1,
     marginBottom: 10,
-    fontSize: 20,
+    height: 45,
+    fontSize: 18,
   },
   forgot: {
     textAlign: 'center',
     textDecorationLine: 'underline',
     marginTop: 10,
+    fontSize: 15,
+    color: 'blue',
   },
   noaccount: {
     fontSize: 20,
     textAlign: 'center',
-    marginTop: 50,
+    marginTop: 30,
     fontWeight: 'bold',
     color: '#808080',
   }
 });
 
-const LoginNavigator = createStackNavigator({
+const LoginContainer = createStackNavigator({
   Login: {screen: Login},
   CreateNewAccount: {screen: CreateNewAccount},
   SelectAnOption: {screen: SelectAnOption},
+  EnterCoupon: {screen: EnterCoupon},
+  PricingOptions: {screen: PricingOptions},
+  FreeHosting: {screen: FreeHosting},
+  Empty: {screen: Empty},
 });
 
-const App = createAppContainer(LoginNavigator);
+const App = createAppContainer(LoginContainer);
 
 
 export default App;

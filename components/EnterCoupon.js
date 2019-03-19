@@ -10,27 +10,32 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import PricingOptions from './PricingOptions';
+import FreeHostingCouponPage from './FreeHostingCouponPage';
 
-class PricingOptions extends Component {
+class EnterCoupon extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Pricing Options</Text>
+        <Text style={styles.welcome}>Enter your coupon code.</Text>
+        <TextInput
+          style={styles.inputblock}
+          placeholder=' Coupon Code'>
+        </TextInput>
         <View style={styles.button}>
           <Button
-            title=" $5.99 / month (after first 6 months)"
+            title="Continue"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+<<<<<<< HEAD:components/CreateAProfile.js
+            onPress={() => this.props.navigation.navigate('FreeHostingCouponPage')}/>
+=======
+            onPress={() => this.props.navigation.navigate('FreeHosting')}/>
+>>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c:components/EnterCoupon.js
         </View>
-        <View style={styles.button}>
-        <Button
-          title=" Get 6 additional months for $29.99"
-          color="#0000FF"
-          onPress={() => this.props.navigation.navigate('PricingOptions')}/>
-      </View>
+        <Text style={styles.regular}>Don't have one?</Text>
         <View style={styles.button}>
           <Button
-            title=" Eternal Hosting (10 years) for $259.99"
+            title="See Pricing Options"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('PricingOptions')}/>
         </View>
@@ -40,12 +45,6 @@ class PricingOptions extends Component {
 }
 
 const styles = StyleSheet.create({
-  image: {
-    marginTop: 20,
-    marginBottom: 20,
-    width: 280,
-    height: 130,
-  },
   container: {
     marginLeft: 60,
     marginRight: 60,
@@ -54,16 +53,21 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 25,
     textAlign: 'center',
-    margin: 10,
+    marginLeft: 10,
+    marginTop: 30,
+    marginBottom: 30,
     fontWeight: 'bold',
     color: '#808080',
   },
   instructions: {
     color: '#808080',
+    marginTop: 50,
     marginBottom: 5,
-    fontSize: 15,
+    fontSize: 17,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   regular: {
     marginTop: 15,
@@ -73,8 +77,9 @@ const styles = StyleSheet.create({
   },
   inputblock: {
     borderWidth: 1,
-    marginBottom: 10,
-    fontSize: 20,
+    marginBottom: 15,
+    height: 45,
+    fontSize: 18,
   },
   forgot: {
     textAlign: 'center',
@@ -90,14 +95,16 @@ const styles = StyleSheet.create({
   }
 });
 
-<<<<<<< HEAD:components/PricingOptions.js
-const PricingOptionsNavigator = createStackNavigator({
+<<<<<<< HEAD:components/CreateAProfile.js
+const createAProfileNavigator = createStackNavigator({
+  CreateAProfile: {screen: CreateAProfile},
+  FreeHostingCouponPage: {screen: FreeHostingCouponPage},
   PricingOptions: {screen: PricingOptions},
 });
 
-const App = createAppContainer(PricingOptionsNavigator);
+const App = createAppContainer(createAProfileNavigator);
 
 =======
->>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c:components/Explore.js
+>>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c:components/EnterCoupon.js
 
-export default Explore;
+export default EnterCoupon;

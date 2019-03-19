@@ -18,26 +18,30 @@ class SelectAnOption extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Select an option.</Text>
-        <Text style={styles.welcome}>I have an emblem.</Text>
+        <Text style={styles.instructions}>I have an emblem.</Text>
         <View style={styles.button}>
           <Button
             title="Create A Profile"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateAProfile')}/>
+            onPress={() => this.props.navigation.navigate('EnterCoupon')}/>
         </View>
-        <Text style={styles.welcome}>I want to purchase an emblem.</Text>
+        <Text style={styles.instructions}>I want to purchase an emblem.</Text>
         <View style={styles.button}>
           <Button
             title="Go to Store"
             color="#0000FF"
+<<<<<<< HEAD
             onPress={() => this.props.navigation.navigate('GoToStore')}/>
+=======
+            onPress={() => this.props.navigation.navigate('Empty')}/>
+>>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c
         </View>
-        <Text style={styles.welcome}> I want to explore the site.</Text>
+        <Text style={styles.instructions}> I want to explore the site.</Text>
         <View style={styles.button}>
           <Button
             title="Continue"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateNewAccount')}/>
+            onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
       </View>
     );
@@ -45,30 +49,27 @@ class SelectAnOption extends Component {
 }
 
 const styles = StyleSheet.create({
-  image: {
-    marginTop: 20,
-    marginBottom: 20,
-    width: 280,
-    height: 130,
-  },
   container: {
     marginLeft: 60,
     marginRight: 60,
   },
   button: {
-    marginTop: 5,
+    marginBottom: 30,
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 25,
     textAlign: 'center',
-    margin: 10,
+    marginLeft: 10,
+    marginTop: 30,
+    marginBottom: 40,
     fontWeight: 'bold',
     color: '#808080',
   },
   instructions: {
     color: '#808080',
     marginBottom: 5,
-    fontSize: 15,
+    fontSize: 17,
+    textAlign: 'center',
   },
   inputblock: {
     borderWidth: 1,
@@ -89,6 +90,7 @@ const styles = StyleSheet.create({
   }
 });
 
+<<<<<<< HEAD
 const selectionNavigator = createStackNavigator({
   SelectAnOption: {screen: SelectAnOption},
   CreateAProfile: {screen: CreateAProfile},
@@ -99,3 +101,6 @@ const App = createAppContainer(selectionNavigator);
 
 
 export default App;
+=======
+export default SelectAnOption;
+>>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c

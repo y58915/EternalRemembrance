@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
   }
 });
 
+<<<<<<< HEAD
 const StoreNavigator = createStackNavigator({
   GoToStore: {screen: GoToStore},
   FreeHostingCouponPage: {screen: FreeHostingCouponPage},
@@ -108,5 +109,7 @@ const StoreNavigator = createStackNavigator({
 });
 
 const App = createAppContainer(StoreNavigator);
+=======
+>>>>>>> b8e4f3c1eab326ffe57c293811c72e5471366a6c
 
-export default App;
+export default GoToStore;
