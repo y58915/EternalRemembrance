@@ -12,7 +12,6 @@ import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import FreeHostingCouponPage from './FreeHosting';
 import PricingOptions from './PricingOptions';
-import CreateAProfile from './EnterCoupon';
 
 class GoToStore extends Component {
   render() {
@@ -29,15 +28,15 @@ class GoToStore extends Component {
           color="#0000FF"
           onPress={() => this.props.navigation.navigate('FreeHosting')}/>
       </View>
-        <Text style={styles.instructions}>Don't have one?</Text>
+        <Text style={styles.regular}>Don't have one?</Text>
         <View style={styles.button}>
           <Button
             title="See Pricing Options"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('PricingOptions')}/>
         </View>
-        <Text style={styles.instructions}>Purchase Emblems</Text>
-        <Text style={styles.instructions}>Upgrade Subscription</Text>
+        <Text style={styles.regular}>Purchase Emblems</Text>
+        <Text style={styles.regular}>Upgrade Subscription</Text>
         <View style={styles.button}>
           <Button
             title=" 6 additional months of hosting $29.99"
@@ -81,6 +80,12 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontSize: 15,
   },
+  regular: {
+    marginTop: 15,
+    color:'#808080',
+    textAlign: 'center',
+    fontSize: 15,
+  },
   inputblock: {
     borderWidth: 1,
     marginBottom: 10,
@@ -99,16 +104,5 @@ const styles = StyleSheet.create({
     color: '#808080',
   }
 });
-
-
-const StoreNavigator = createStackNavigator({
-  GoToStore: {screen: GoToStore},
-  FreeHostingCouponPage: {screen: FreeHostingCouponPage},
-  PricingOptions: {screen: PricingOptions},
-  EnterCoupon: {screen: EnterCoupon},
-});
-
-const App = createAppContainer(StoreNavigator);
-
 
 export default GoToStore;

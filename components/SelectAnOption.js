@@ -12,27 +12,29 @@ import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import CreateAProfile from './EnterCoupon';
 import PricingOptions from './PricingOptions';
+import GoToStore from './GoToStore';
+
 
 class SelectAnOption extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Select an option.</Text>
-        <Text style={styles.instructions}>I have an emblem.</Text>
+        <Text style={styles.regular}>I have an emblem.</Text>
         <View style={styles.button}>
           <Button
             title="Create A Profile"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('EnterCoupon')}/>
         </View>
-        <Text style={styles.instructions}>I want to purchase an emblem.</Text>
+        <Text style={styles.regular}>I want to purchase an emblem.</Text>
         <View style={styles.button}>
           <Button
             title="Go to Store"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('GoToStore')}/>
         </View>
-        <Text style={styles.instructions}> I want to explore the site.</Text>
+        <Text style={styles.regular}> I want to explore the site.</Text>
         <View style={styles.button}>
           <Button
             title="Continue"
@@ -66,6 +68,12 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontSize: 17,
     textAlign: 'center',
+  },
+  regular: {
+    marginTop: 15,
+    color:'#808080',
+    textAlign: 'center',
+    fontSize: 15,
   },
   inputblock: {
     borderWidth: 1,

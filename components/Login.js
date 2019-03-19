@@ -18,6 +18,8 @@ import FreeHosting from './FreeHosting';
 import Empty from './Empty';
 import ForgotPassword from './ForgotPassword';
 import Subscription from './Subscription';
+import GoToStore from './GoToStore';
+
 
 class Login extends Component {
   render() {
@@ -126,6 +128,7 @@ const LoginContainer = createStackNavigator({
   Empty: {screen: Empty},
   ForgotPassword: {screen: ForgotPassword},
   Subscription: {screen: Subscription},
+  GoToStore: {screen: GoToStore},
 });
 
 const App = createAppContainer(LoginContainer);

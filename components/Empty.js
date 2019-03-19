@@ -16,7 +16,7 @@ class Empty extends Component {
     return (
       <View>
         <Text>
-          This page is empty temperary.
+          Coming Soon!
         </Text>
       </View>
     );
