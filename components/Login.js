@@ -19,6 +19,7 @@ import Empty from './Empty';
 import ForgotPassword from './ForgotPassword';
 import Subscription from './Subscription';
 import Congrats from './Congrats';
+import CreateProfile1 from './CreateProfile1';
 
 class Login extends Component {
   render() {
@@ -129,6 +130,7 @@ const LoginContainer = createStackNavigator({
   ForgotPassword: {screen: ForgotPassword},
   Subscription: {screen: Subscription},
   Congrats: {screen: Congrats},
+  CreateProfile1: {screen: CreateProfile1},
 });
 
 const App = createAppContainer(LoginContainer);
