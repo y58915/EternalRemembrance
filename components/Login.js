@@ -123,11 +123,7 @@ const LoginContainer = createStackNavigator({
   PricingOptions: {screen: PricingOptions},
   FreeHosting: {screen: FreeHosting},
   Empty: {screen: Empty},
-<<<<<<< HEAD
-  Subscription: {screen: Subscription},
-=======
   ForgotPassword: {screen: ForgotPassword},
->>>>>>> ba5c000f5bcd8341af8647a70c0e6d4589daeb9a
 });
 
 const App = createAppContainer(LoginContainer);
