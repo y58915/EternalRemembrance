@@ -10,6 +10,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import CreateAProfile from './CreateAProfile';
+import PricingOptions from './PricingOptions';
 
 class SelectAnOption extends Component {
   render() {
@@ -28,7 +30,7 @@ class SelectAnOption extends Component {
           <Button
             title="Go to Store"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+            onPress={() => this.props.navigation.navigate('GoToStore')}/>
         </View>
         <Text style={styles.welcome}> I want to explore the site.</Text>
         <View style={styles.button}>
@@ -89,6 +91,8 @@ const styles = StyleSheet.create({
 
 const selectionNavigator = createStackNavigator({
   SelectAnOption: {screen: SelectAnOption},
+  CreateAProfile: {screen: CreateAProfile},
+  PricingOptions: {screen: PricingOptions},
 });
 
 const App = createAppContainer(selectionNavigator);

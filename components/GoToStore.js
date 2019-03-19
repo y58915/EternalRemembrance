@@ -1,49 +1,54 @@
-/**
+/*
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
  * @format
  * @flow
  * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
 
+*/
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import FreeHostingCouponPage from './FreeHostingCouponPage';
+import PricingOptions from './PricingOptions';
+import CreateAProfile from './CreateAProfile';
 
 class GoToStore extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.image}
-          source={require('../resources/logo.jpg')}/>
-        <Text style={styles.welcome}>Create New Account</Text>
-        <Text style={styles.instructions}>Full Name</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' John Doe'>
-        </TextInput>
-        <Text style={styles.instructions}>Email</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' johndoe@mail.com'>
-        </TextInput>
-        <Text style={styles.instructions}>Password</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' ••••••'>
-        </TextInput>
-        <Text style={styles.instructions}>Confirm Password</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' ••••••'>
-        </TextInput>
+      <Text style={styles.welcome}>Enter your coupon code.</Text>
+      <TextInput
+        style={styles.inputblock}
+        placeholder=' Coupon Code'>
+      </TextInput>
+      <View style={styles.button}>
+        <Button
+          title="Continue"
+          color="#0000FF"
+          onPress={() => this.props.navigation.navigate('FreeHostingCouponPage')}/>
+      </View>
+        <Text style={styles.instructions}>Don't have one?</Text>
         <View style={styles.button}>
           <Button
-            title="Sign Up"
+            title="See Pricing Options"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+        </View>
+        <Text style={styles.instructions}>Purchase Emblems</Text>
+        <Text style={styles.instructions}>Upgrade Subscription</Text>
+        <View style={styles.button}>
+          <Button
+            title=" 6 additional months of hosting $29.99"
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+        </View>
+        <View style={styles.button}>
+          <Button
+            title=" Eternal Hosting (10 years) $259.99"
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
         </View>
       </View>
     );
@@ -95,11 +100,13 @@ const styles = StyleSheet.create({
   }
 });
 
-const newAccountNavigator = createStackNavigator({
-  CreateNewAccount: {screen: CreateNewAccount},
+const StoreNavigator = createStackNavigator({
+  GoToStore: {screen: GoToStore},
+  FreeHostingCouponPage: {screen: FreeHostingCouponPage},
+  PricingOptions: {screen: PricingOptions},
+  CreateAProfile: {screen: CreateAProfile},
 });
 
-const App = createAppContainer(newAccountNavigator);
-
+const App = createAppContainer(StoreNavigator);
 
 export default App;

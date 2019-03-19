@@ -10,30 +10,34 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import CreateAProfile from './CreateAProfile';
 import PricingOptions from './PricingOptions';
-import FreeHostingCouponPage from './FreeHostingCouponPage';
 
-class CreateAProfile extends Component {
+
+class FreeHostingCouponPage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Enter your coupon code.</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' Coupon Code'>
-        </TextInput>
+        <Text style={styles.welcome}>Welcome!</Text>
+        <Text style={styles.welcome}>You are receiving 6 months of free hosting.</Text>
+        <Text style={styles.regular}>Upgrade now for a discount.</Text>
         <View style={styles.button}>
           <Button
-            title="Continue"
+            title=" Get 6 additional months for $29.99"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('FreeHostingCouponPage')}/>
         </View>
-        <Text style={styles.regular}>Don't have one?</Text>
+        <View style={styles.button}>
+        <Button
+          title=" Get 6 additional months for $29.99"
+          color="#0000FF"
+          onPress={() => this.props.navigation.navigate('FreeHostingCouponPage')}/>
+      </View>
         <View style={styles.button}>
           <Button
-            title="See Pricing Options"
+            title=" Continue without upgrade"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+            onPress={() => this.props.navigation.navigate('CreateAProfile')}/>
         </View>
       </View>
     );
@@ -91,13 +95,13 @@ const styles = StyleSheet.create({
   }
 });
 
-const createAProfileNavigator = createStackNavigator({
-  CreateAProfile: {screen: CreateAProfile},
+const FreeHostingCouponPageNavigator = createStackNavigator({
   FreeHostingCouponPage: {screen: FreeHostingCouponPage},
+  CreateAProfile: {screen: CreateAProfile},
   PricingOptions: {screen: PricingOptions},
 });
 
-const App = createAppContainer(createAProfileNavigator);
+const App = createAppContainer(FreeHostingCouponPageNavigator);
 
 
 export default App;

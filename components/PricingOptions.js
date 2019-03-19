@@ -11,39 +11,28 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-class Explore extends Component {
+class PricingOptions extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.image}
-          source={require('../resources/logo.jpg')}/>
-        <Text style={styles.welcome}>Create New Account</Text>
-        <Text style={styles.instructions}>Full Name</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' John Doe'>
-        </TextInput>
-        <Text style={styles.instructions}>Email</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' johndoe@mail.com'>
-        </TextInput>
-        <Text style={styles.instructions}>Password</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' ••••••'>
-        </TextInput>
-        <Text style={styles.instructions}>Confirm Password</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' ••••••'>
-        </TextInput>
+        <Text style={styles.welcome}>Pricing Options</Text>
         <View style={styles.button}>
           <Button
-            title="Sign Up"
+            title=" $5.99 / month (after first 6 months)"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+        </View>
+        <View style={styles.button}>
+        <Button
+          title=" Get 6 additional months for $29.99"
+          color="#0000FF"
+          onPress={() => this.props.navigation.navigate('PricingOptions')}/>
+      </View>
+        <View style={styles.button}>
+          <Button
+            title=" Eternal Hosting (10 years) for $259.99"
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('PricingOptions')}/>
         </View>
       </View>
     );
@@ -76,6 +65,12 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontSize: 15,
   },
+  regular: {
+    marginTop: 15,
+    color:'#808080',
+    textAlign: 'center',
+    fontSize: 15,
+  },
   inputblock: {
     borderWidth: 1,
     marginBottom: 10,
@@ -95,11 +90,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const newAccountNavigator = createStackNavigator({
-  CreateNewAccount: {screen: CreateNewAccount},
+const PricingOptionsNavigator = createStackNavigator({
+  PricingOptions: {screen: PricingOptions},
 });
 
-const App = createAppContainer(newAccountNavigator);
+const App = createAppContainer(PricingOptionsNavigator);
 
 
 export default App;
