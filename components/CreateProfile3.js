@@ -7,80 +7,73 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
- import React, {Component} from 'react';
- import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
- import {createStackNavigator, createAppContainer} from 'react-navigation';
+import React, {Component} from 'react';
+import {StyleSheet, Text, View, Picker, Button} from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 
- class CreateProfile3 extends Component {
-   render() {
-     return (
-       <View style={styles.container}>
-           <Text style={styles.detail}>Privacy Settings</Text>
-             <Text style={styles.instructions}>Choose who this profile wil be visible too.</Text>
-             <TextInput
-               style={styles.inputblockdate}
-               placeholder = ' Public'/>
-           <View style={styles.button}>
-             <Button
-               title="Continue"
-               color="#0000FF"
-               onPress={() => this.props.navigation.navigate('CreateProfile4')}/>
-           </View>
-           </View>
+class CreateProfile3 extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Step 3: {"\n"}
+          Privacy Settings
+          </Text>
+        <Text style={styles.instructions}>
+          Choose who this profile wil be visible too.
+        </Text>
+        <Picker
+          style={styles.picker}
+          onValueChange={(itemValue, itemIndex) =>
+            this.setState({language: itemValue})
+          }>
+          <Picker.Item label="Pubilc" value="Pubilc" />
+          <Picker.Item label="Only My Friends can See" value="Friends" />
+          <Picker.Item label="Private" value="Private" />
+        </Picker>
+        <View style={styles.bottomButton}>
+          <Button
+            title="Continue"
+            color="#0000FF"
+            onPress={() => this.props.navigation.navigate('CreateProfile4')}/>
+        </View>
+      </View>
      );
    }
  }
 
  const styles = StyleSheet.create({
    container: {
+     flex: 1,
      marginLeft: 60,
      marginRight: 60,
+   },
+   picker : {
+     height: 50,
+     width: '100%',
+     borderWidth: 1,
    },
    button: {
      marginTop: 10,
      marginBottom: 10,
    },
-   detail: {
+   welcome: {
      fontSize: 18,
+     marginLeft: 10,
+     marginTop: 30,
+     marginBottom: 30,
      fontWeight: 'bold',
      color: '#808080',
-     marginBottom: 10,
    },
    instructions: {
      color: '#808080',
-     fontSize: 13,
-   },
-   buttonbottom: {
-     marginTop: 250,
-   },
-   method: {
-     color: '#808080',
-     fontSize: 17,
-   },
-   optional: {
-     color: '#808080',
-     fontSize: 17,
-   },
-   later: {
-     textAlign: 'center',
-     color: '#808080',
      fontSize: 15,
-     marginTop: 20,
+     marginBottom: 30,
    },
-   inputblock: {
-     borderWidth: 1,
-     marginTop: 4,
-     marginBottom: 6,
-     height: 45,
-     fontSize: 18,
-   },
-   inputblockdate: {
-     borderWidth: 1,
-     marginTop: 4,
-     marginBottom: 6,
-     marginRight: 20,
-     height: 45,
-     fontSize: 18,
+   bottomButton: {
+     position: 'absolute',
+     bottom: '8%',
+     width: '100%',
    },
  });
 

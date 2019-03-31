@@ -16,17 +16,25 @@ class CreateProfile2 extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-        Administrator Rights </Text>
-        <Text style={styles.instructions}>Invite administrators to contribute and have special access to this page.</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' xxxx@gmail.com'>
-        </TextInput>
-        <View style={styles.button}>
-          <Button
-            title="Invite"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+          Step 2: {"\n"}
+          Administrator Rights
+        </Text>
+        <Text style={styles.instructions}>
+          Invite administrators to contribute and have special access to this page.
+        </Text>
+
+        <View style={{flexDirection: 'row'}}>
+          <View style={{flex: 3}}>
+            <TextInput
+              style={styles.inputblock}
+              placeholder= ' Enter valid email address'/>
+          </View>
+          <View style={styles.button, {flex: 1}}>
+            <Button
+              title="Invite"
+              color="#0000FF"
+              onPress={() => this.props.navigation.navigate('Empty')}/>
+          </View>
         </View>
         <View style={styles.button}>
           <Button
@@ -34,7 +42,7 @@ class CreateProfile2 extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <View style={styles.button}>
+        <View style={styles.bottomButton}>
           <Button
             title="Continue"
             color="#0000FF"
@@ -47,6 +55,7 @@ class CreateProfile2 extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     marginLeft: 60,
     marginRight: 60,
   },
@@ -54,9 +63,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
   },
+  bottomButton: {
+    position: 'absolute',
+    bottom: '8%',
+    width: '100%',
+  },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+    fontSize: 18,
     marginLeft: 10,
     marginTop: 30,
     marginBottom: 30,
@@ -64,14 +77,16 @@ const styles = StyleSheet.create({
     color: '#808080',
   },
   instructions: {
-    textAlign: 'center',
     color: '#808080',
-    fontSize: 18,
+    fontSize: 15,
+    marginBottom: 30,
   },
   inputblock: {
     borderWidth: 1,
     marginBottom: 10,
-    fontSize: 20,
+    marginRight: 10,
+    height: 35,
+    fontSize: 13,
   },
   or: {
     fontSize: 20,

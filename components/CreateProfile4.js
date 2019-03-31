@@ -15,8 +15,15 @@ class CreateProfile4 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', marginTop: 30}}>
-          <Text style={styles.detail}>Connect Emblem</Text>
+        <View style={{marginTop: 30}}>
+          <Text style={styles.detail}>
+            Step 4:
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={styles.detail}>
+            Connect Emblem
+          </Text>
           <Text style={styles.optional}> (optional at this time)</Text>
         </View>
         <Text style={styles.method}>Method 1</Text>
@@ -46,10 +53,11 @@ class CreateProfile4 extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <Text style={styles.later}>
-          You may press 'Continue' to come back to this step at a later time.
-        </Text>
-        <View style={styles.button}>
+
+        <View style={styles.bottomButton}>
+          <Text style={styles.later}>
+            You may press 'Continue' to come back to this step at a later time.
+          </Text>
           <Button
             title="Continue"
             color="#0000FF"
@@ -62,6 +70,7 @@ class CreateProfile4 extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     marginLeft: 60,
     marginRight: 60,
   },
@@ -70,7 +79,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   detail: {
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: 'bold',
     color: '#808080',
   },
@@ -78,24 +87,30 @@ const styles = StyleSheet.create({
     color: '#808080',
     fontSize: 15,
   },
+  bottomButton: {
+    position: 'absolute',
+    bottom: '8%',
+    width: '100%',
+  },
   method: {
     color: '#808080',
     fontSize: 17,
+    marginTop: 5,
   },
   optional: {
     color: '#808080',
-    fontSize: 17,
+    fontSize: 15,
   },
   later: {
     textAlign: 'center',
     color: '#808080',
     fontSize: 15,
-    marginTop: 20,
+    marginBottom: 20,
   },
   inputblock: {
     borderWidth: 1,
     marginTop: 10,
-    height: 45,
+    height: 40,
     fontSize: 18,
   },
 });

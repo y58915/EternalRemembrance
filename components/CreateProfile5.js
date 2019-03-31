@@ -15,7 +15,12 @@ class CreateProfile5 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', marginTop: 30}}>
+        <View style={{marginTop: 30}}>
+          <Text style={styles.detail}>
+            Step 4:
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
           <Text style={styles.detail}>Upload Profile Picture</Text>
           <Text style={styles.optional}> (optional)</Text>
         </View>
@@ -25,7 +30,7 @@ class CreateProfile5 extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <View style={styles.buttonbottom}>
+        <View style={styles.bottomButton}>
           <Button
             title="Continue"
             color="#0000FF"
@@ -38,15 +43,13 @@ class CreateProfile5 extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     marginLeft: 60,
     marginRight: 60,
   },
   button: {
-    marginTop: 10,
+    marginTop: 20,
     marginBottom: 10,
-  },
-  buttonbottom: {
-    marginTop: 400,
   },
   detail: {
     fontSize: 18,
@@ -56,6 +59,11 @@ const styles = StyleSheet.create({
   optional: {
     color: '#808080',
     fontSize: 17,
+  },
+  bottomButton: {
+    position: 'absolute',
+    bottom: '8%',
+    width: '100%',
   },
 });
 

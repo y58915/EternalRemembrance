@@ -16,33 +16,39 @@ class CreateProfile1 extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-        Required Loved One's Information </Text>
+          Step 1: {"\n"}
+          Required Loved One's Information
+        </Text>
         <Text style={styles.instructions}>First Name</Text>
         <TextInput
           style={styles.inputblock}
-          placeholder=' John Doe'>
+          placeholder=' Sally'>
         </TextInput>
         <Text style={styles.instructions}>Middle Name</Text>
         <TextInput
           style={styles.inputblock}
-          placeholder=' John Doe'>
+          placeholder=' Jane'>
         </TextInput>
         <Text style={styles.instructions}>Last Name</Text>
         <TextInput
           style={styles.inputblock}
-          placeholder=' John Doe'>
+          placeholder=' Doe'>
         </TextInput>
-        <Text style={styles.instructions}>Date of Birth</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' xx/xx/xxxx'>
-        </TextInput>
-        <Text style={styles.instructions}>Date of Death</Text>
-        <TextInput
-          style={styles.inputblock}
-          placeholder=' xx/xx/xxxx'>
-        </TextInput>
-        <View style={styles.button}>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{flex: 1}}>
+            <Text style={styles.instructions}>Date of Birth</Text>
+            <TextInput
+              style={styles.inputblockBirth}
+              placeholder= ' xx/xx/xxxx'/>
+          </View>
+          <View style={{flex: 1}}>
+            <Text style={styles.instructions, {marginLeft: 10}}>Date of Death</Text>
+            <TextInput
+              style={styles.inputblockDeath}
+              placeholder= ' xx/xx/xxxx'/>
+          </View>
+        </View>
+        <View style={styles.bottomButton}>
           <Button
             title="Continue"
             color="#0000FF"
@@ -55,6 +61,7 @@ class CreateProfile1 extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     marginLeft: 60,
     marginRight: 60,
   },
@@ -62,9 +69,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
   },
+  bottomButton: {
+    position: 'absolute',
+    bottom: '8%',
+    width: '100%',
+  },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+    fontSize: 18,
     marginLeft: 10,
     marginTop: 30,
     marginBottom: 30,
@@ -73,14 +84,26 @@ const styles = StyleSheet.create({
   },
   inputblock: {
     borderWidth: 1,
-    marginBottom: 20,
-    height: 45,
-    fontSize: 18,
+    marginBottom: 10,
+    marginTop: 5,
+    height: 40,
+    fontSize: 16,
   },
-  inputblock: {
+  inputblockBirth: {
     borderWidth: 1,
     marginBottom: 10,
-    fontSize: 20,
+    marginTop: 5,
+    marginRight: 10,
+    height: 40,
+    fontSize: 16,
+  },
+  inputblockDeath: {
+    borderWidth: 1,
+    marginBottom: 10,
+    marginTop: 5,
+    marginLeft: 10,
+    height: 40,
+    fontSize: 16,
   },
   or: {
     fontSize: 20,

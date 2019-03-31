@@ -53,7 +53,7 @@ class Login extends Component {
           <Button
             title="Sign In"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateProfile4')}/>
+            onPress={() => this.props.navigation.navigate('CreateProfile6')}/>
         </View>
         <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('ForgotPassword')}>
           Forgot Password?

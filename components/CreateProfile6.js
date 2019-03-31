@@ -15,7 +15,12 @@ class CreateProfile6 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', marginTop: 30, marginBottom: 30}}>
+        <View style={{marginTop: 30}}>
+          <Text style={styles.detail}>
+            Step 4:
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row', marginBottom: 20}}>
           <Text style={styles.detail}>Key Dates</Text>
           <Text style={styles.optional}> (optional)</Text>
         </View>
@@ -23,37 +28,37 @@ class CreateProfile6 extends Component {
           <View style={{flex: 1}}>
             <Text style={styles.instructions}>Month</Text>
             <TextInput
-              style={styles.inputblockdate}
+              style={styles.inputblockMonth}
               placeholder = ' April'/>
           </View>
           <View style={{flex: 1}}>
-            <Text style={styles.instructions}>Day</Text>
+            <Text style={styles.instructions, {marginLeft: 3}}>Day</Text>
             <TextInput
-              style={styles.inputblockdate}
+              style={styles.inputblockDay}
               placeholder = ' 23'/>
           </View>
           <View style={{flex: 1}}>
-            <Text style={styles.instructions}>Year</Text>
+            <Text style={styles.instructions, {marginLeft: 6}}>Year</Text>
             <TextInput
-              style={styles.inputblockdate}
+              style={styles.inputblockyear}
               placeholder = ' 1925'/>
           </View>
         </View>
         <Text style={styles.instructions}>Description</Text>
         <TextInput
           style={styles.inputblock}
-          placeholder = 'Anniversary'/>
+          placeholder = ' Anniversary'/>
         <View style={styles.button}>
           <Button
             title="Add Key Date"
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-        <View style={styles.buttonbottom}>
+        <View style={styles.bottomButton}>
           <Button
             title="Finish"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('SelectAnOption')}/>
+            onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
       </View>
     );
@@ -62,6 +67,7 @@ class CreateProfile6 extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     marginLeft: 60,
     marginRight: 60,
   },
@@ -78,8 +84,10 @@ const styles = StyleSheet.create({
     color: '#808080',
     fontSize: 13,
   },
-  buttonbottom: {
-    marginTop: 250,
+  bottomButton: {
+    position: 'absolute',
+    bottom: '8%',
+    width: '100%',
   },
   method: {
     color: '#808080',
@@ -99,15 +107,32 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 4,
     marginBottom: 6,
-    height: 45,
+    height: 40,
     fontSize: 18,
   },
-  inputblockdate: {
+  inputblockMonth: {
     borderWidth: 1,
     marginTop: 4,
     marginBottom: 6,
-    marginRight: 20,
-    height: 45,
+    marginRight: 6,
+    height: 40,
+    fontSize: 18,
+  },
+  inputblockDay: {
+    borderWidth: 1,
+    marginTop: 4,
+    marginBottom: 6,
+    marginRight: 3,
+    marginLeft: 3,
+    height: 40,
+    fontSize: 18,
+  },
+  inputblockyear: {
+    borderWidth: 1,
+    marginTop: 4,
+    marginBottom: 6,
+    marginLeft: 6,
+    height: 40,
     fontSize: 18,
   },
 });
