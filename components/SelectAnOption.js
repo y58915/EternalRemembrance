@@ -32,7 +32,7 @@ class SelectAnOption extends Component {
           <Button
             title="Go to Store"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('GoToStore')}/>
+            onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
         <Text style={styles.regular}> I want to explore the site.</Text>
         <View style={styles.button}>

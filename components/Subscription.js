@@ -9,16 +9,17 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image, CheckBox} from 'react-native';
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {createStackNavigator, createAppContainer, getParam} from 'react-navigation';
 
 class Subscription extends Component {
   render() {
+    const suboption = this.props.navigation.getParam('option');
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Hosting Subscription</Text>
         <Text style={styles.detail}>
-          $5.99/month {"\n"}
-          (after first 6 month expire)
+          {suboption}
         </Text>
         <Text style={styles.cardinfo}>Card Information</Text>
         <Text style={styles.instructions}>Card Number</Text>

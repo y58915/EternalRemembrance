@@ -24,14 +24,18 @@ class FreeHosting extends Component {
           <Button
             title="Get 6 additional months for $29.99"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('Subscription', {
+                option: 'Get 6 additional months for $29.99',
+              })}/>
         </View>
         <Text style={styles.or}>OR</Text>
         <View style={styles.button}>
           <Button
             title="Eternal Hosting for $259.99"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => this.props.navigation.navigate('Subscription', {
+                option: 'Eternal Hosting for $259.99',
+              })}/>
         </View>
         <Text style={styles.without} onPress={() => this.props.navigation.navigate('Congrats')}>
           Continue without upgrade
