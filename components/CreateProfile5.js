@@ -10,9 +10,18 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import ImagePicker from 'react-native-image-picker';
 
 class CreateProfile5 extends Component {
   render() {
+    const options = {
+      title: 'Select Picture',
+      storageOptions: {
+        skipBackup: true,
+        path: 'images',
+      },
+    };
+
     return (
       <View style={styles.container}>
         <View style={{marginTop: 30}}>
@@ -28,7 +37,23 @@ class CreateProfile5 extends Component {
           <Button
             title="Browse Phone"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            onPress={() => {ImagePicker.showImagePicker(options, (response) => {
+              console.log('Response = ', response);
+
+              if (response.didCancel) {
+                console.log('User cancelled image picker');
+              }
+              else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+              } else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+              } else {
+                const source = { uri: response.uri };
+                this.setState({
+                  avatarSource: source,
+                });
+              }
+            });}}/>
         </View>
         <View style={styles.bottomButton}>
           <Button
@@ -46,6 +71,12 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 60,
     marginRight: 60,
+  },
+  image: {
+    marginTop: 20,
+    marginBottom: 20,
+    width: 260,
+    height: 115,
   },
   button: {
     marginTop: 20,
