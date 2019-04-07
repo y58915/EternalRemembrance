@@ -13,15 +13,51 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 import ImagePicker from 'react-native-image-picker';
 
 class CreateProfile5 extends Component {
-  render() {
+  state = {
+    avatarSource: null,
+    videoSource: null,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.selectPhotoTapped = this.selectPhotoTapped.bind(this);
+    this.selectVideoTapped = this.selectVideoTapped.bind(this);
+  }
+
+  selectPhotoTapped() {
     const options = {
-      title: 'Select Picture',
+      quality: 1.0,
+      maxWidth: 500,
+      maxHeight: 500,
       storageOptions: {
         skipBackup: true,
-        path: 'images',
       },
     };
 
+    ImagePicker.showImagePicker(options, (response) => {
+          console.log('Response = ', response);
+
+          if (response.didCancel) {
+            console.log('User cancelled photo picker');
+          } else if (response.error) {
+            console.log('ImagePicker Error: ', response.error);
+          } else {
+            let source = { uri: response.uri };
+
+            // You can also display the image using data:
+            // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+            this.setState({
+              avatarSource: source,
+            });
+          }
+        });
+      }
+
+
+
+  render() {
     return (
       <View style={styles.container}>
         <View style={{marginTop: 30}}>
@@ -37,23 +73,10 @@ class CreateProfile5 extends Component {
           <Button
             title="Browse Phone"
             color="#0000FF"
-            onPress={() => {ImagePicker.showImagePicker(options, (response) => {
-              console.log('Response = ', response);
-
-              if (response.didCancel) {
-                console.log('User cancelled image picker');
-              }
-              else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-              } else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-              } else {
-                const source = { uri: response.uri };
-                this.setState({
-                  avatarSource: source,
-                });
-              }
-            });}}/>
+            onPress={this.selectPhotoTapped.bind(this)}/>
+        </View>
+        <View>
+          <Image style={styles.avatar} source={this.state.avatarSource} />
         </View>
         <View style={styles.bottomButton}>
           <Button
