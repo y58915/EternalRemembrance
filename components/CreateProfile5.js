@@ -10,53 +10,16 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import ImagePicker from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-crop-picker';
 
 class CreateProfile5 extends Component {
-  state = {
-    avatarSource: null,
-    videoSource: null,
-  };
 
-  constructor(props) {
-    super(props);
-
-    this.selectPhotoTapped = this.selectPhotoTapped.bind(this);
-    this.selectVideoTapped = this.selectVideoTapped.bind(this);
-  }
-
-  selectPhotoTapped() {
-    const options = {
-      quality: 1.0,
-      maxWidth: 500,
-      maxHeight: 500,
-      storageOptions: {
-        skipBackup: true,
-      },
+  constructor() {
+    super();
+    this.state = {
+      image: null
     };
-
-    ImagePicker.showImagePicker(options, (response) => {
-          console.log('Response = ', response);
-
-          if (response.didCancel) {
-            console.log('User cancelled photo picker');
-          } else if (response.error) {
-            console.log('ImagePicker Error: ', response.error);
-          } else {
-            let source = { uri: response.uri };
-
-            // You can also display the image using data:
-            // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-            this.setState({
-              avatarSource: source,
-            });
-          }
-        });
-      }
-
-
-
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -69,14 +32,37 @@ class CreateProfile5 extends Component {
           <Text style={styles.detail}>Upload Profile Picture</Text>
           <Text style={styles.optional}> (optional)</Text>
         </View>
+        <View>
+          <Image style={{width: 300, height: 300, resizeMode: 'contain'}}
+            source={this.state.image ? this.state.image : require('../resources/DefaultProfile.png')} />
+        </View>
         <View style={styles.button}>
           <Button
             title="Browse Phone"
             color="#0000FF"
-            onPress={this.selectPhotoTapped.bind(this)}/>
-        </View>
-        <View>
-          <Image style={styles.avatar} source={this.state.avatarSource} />
+            onPress={() => {ImagePicker.openPicker({
+                    width: 300,
+                    height: 300,
+                    cropping: true,
+                    compressImageMaxWidth: 1000,
+                    compressImageMaxHeight: 1000,
+                    compressImageQuality: 1,
+                    includeExif: true,
+                  }).then(image => {
+                    console.log('received image', image);
+                    this.setState({
+                      image: {
+                        uri: image.path,
+                        width: image.width,
+                        height: image.height,
+                        mime: image.mime},
+                    });
+                  }).catch(e => {
+                    console.log(e);
+                    Alert.alert(e.message ? e.message : e);
+                  });
+                }
+              }/>
         </View>
         <View style={styles.bottomButton}>
           <Button
