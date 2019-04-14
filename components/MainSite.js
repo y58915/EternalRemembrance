@@ -296,7 +296,7 @@ class MainSite extends Component {
         </Card>
 
         <Card
-          title='Jose Otero shared a story'
+          title='Jose Otero shared a story'>
           <Text style = {{fontSize: 15, marginTop: 5, marginBottom: 5, marginLeft: 5}}>
             Diego {'\n'}
             You will always be thought of....
