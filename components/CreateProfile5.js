@@ -81,12 +81,6 @@ const styles = StyleSheet.create({
     marginLeft: 60,
     marginRight: 60,
   },
-  image: {
-    marginTop: 20,
-    marginBottom: 20,
-    width: 260,
-    height: 115,
-  },
   button: {
     marginTop: 20,
     marginBottom: 10,

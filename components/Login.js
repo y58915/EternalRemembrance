@@ -26,6 +26,7 @@ import CreateProfile3 from './CreateProfile3';
 import CreateProfile4 from './CreateProfile4';
 import CreateProfile5 from './CreateProfile5';
 import CreateProfile6 from './CreateProfile6';
+import MainSite from './MainSite1';
 
 class Login extends Component {
   render() {
@@ -53,7 +54,7 @@ class Login extends Component {
           <Button
             title="Sign In"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateProfile5')}/>
+            onPress={() => this.props.navigation.navigate('MainSite')}/>
         </View>
         <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('ForgotPassword')}>
           Forgot Password?
@@ -143,6 +144,7 @@ const LoginContainer = createStackNavigator({
   CreateProfile4: {screen: CreateProfile4},
   CreateProfile5: {screen: CreateProfile5},
   CreateProfile6: {screen: CreateProfile6},
+  MainSite: {screen: MainSite},
 });
 
 const App = createAppContainer(LoginContainer);
