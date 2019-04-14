@@ -26,7 +26,7 @@ import CreateProfile3 from './CreateProfile3';
 import CreateProfile4 from './CreateProfile4';
 import CreateProfile5 from './CreateProfile5';
 import CreateProfile6 from './CreateProfile6';
-import MainSite from './MainSite1';
+import MainSite from './MainSite';
 
 class Login extends Component {
   render() {
