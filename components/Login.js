@@ -28,6 +28,7 @@ import CreateProfile5 from './CreateProfile5';
 import CreateProfile6 from './CreateProfile6';
 import MainSite from './MainSite';
 import WriteStory from './WriteStory';
+import MainSite2 from './MainSite2';
 
 class Login extends Component {
   render() {
@@ -147,6 +148,7 @@ const LoginContainer = createStackNavigator({
   CreateProfile6: {screen: CreateProfile6},
   MainSite: {screen: MainSite},
   WriteStory: {screen: WriteStory},
+  MainSite2: {screen: MainSite2},
 });
 
 const App = createAppContainer(LoginContainer);

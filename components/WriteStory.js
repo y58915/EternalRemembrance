@@ -18,7 +18,8 @@ class WriteStory extends Component {
   constructor() {
     super();
     this.state = {
-      image: null
+      image: null,
+      text: ''
     };
   }
 
@@ -30,7 +31,8 @@ class WriteStory extends Component {
           <View>
             <Input
               placeholder='Share a story'
-              multiline = {true}/>
+              multiline = {true}
+              onChangeText={(text) => this.setState({text})}/>
           </View>
           <View>
           <Image style={{width: 350, height: 350, resizeMode: 'contain'}}
@@ -86,7 +88,10 @@ class WriteStory extends Component {
         type = 'outline'
         title = 'Continue'
         buttonStyle = {{alignItems: 'baseline'}}
-        onPress = {() => this.props.navigation.navigate('MainSite')}/>
+        onPress = {() => this.props.navigation.navigate('MainSite2', {
+            imagesrc: this.state.image,
+            text: this.state.text,
+          })}/>
       </View>
       </View>
       </View>

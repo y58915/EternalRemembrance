@@ -20,6 +20,7 @@ class CreateProfile5 extends Component {
       image: null
     };
   }
+
   render() {
     return (
       <View style={styles.container}>
