@@ -15,10 +15,21 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 class MainSite extends Component {
   constructor(props) {
     super(props);
-    this.state = { Shared: false }
-    this.state = { pressedFav: false }
-    this.state = { pressedSad: false }
-    this.state = { pressedPray: false };
+    this.state = {
+      Shared: false,
+      pressedFav1: false,
+      pressedSad1: false,
+      pressedPray1: false,
+      pressedFav2: false,
+      pressedSad2: false,
+      pressedPray2: false,
+      pressedFav3: false,
+      pressedSad3: false,
+      pressedPray3: false,
+      pressedFav4: false,
+      pressedSad4: false,
+      pressedPray4: false,
+    };
   }
 
   render() {
@@ -114,10 +125,10 @@ class MainSite extends Component {
           type = 'outline'
           icon={
             <Icon
-              name = {this.state.Favorited?'share': 'share'}
+              name = {this.state.Shared?'share': 'share'}
               containerStyle = {{marginRight: 3}}/>
           }
-          title= {this.state.Favorited?'shared': 'share'}
+          title= {this.state.Shared?'shared': 'share'}
           buttonStyle = {{width: 120}}
           onPress = {() => {this.setState({Shared: !this.state.Shared})}}/>
         </View>
@@ -158,34 +169,34 @@ class MainSite extends Component {
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedFav?'favorite': 'favorite-border'}
+                  name = {this.state.pressedFav1?'favorite': 'favorite-border'}
                   color='red'/>
               }
-              title = {this.state.pressedFav?'1': '0'}
+              title = {this.state.pressedFav1?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedFav: !this.state.pressedFav})}}/>
+              onPress = {() => {this.setState({pressedFav1: !this.state.pressedFav1})}}/>
 
             <Button
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedSad?'favorite': 'favorite-border'}
+                  name = {this.state.pressedSad1?'favorite': 'favorite-border'}
                   color='yellow'/>
               }
-              title = {this.state.pressedSad?'1': '0'}
+              title = {this.state.pressedSad1?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedSad: !this.state.pressedSad})}}/>
+              onPress = {() => {this.setState({pressedSad1: !this.state.pressedSad1})}}/>
 
             <Button
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedPray?'favorite': 'favorite-border'}
+                  name = {this.state.pressedPray1?'favorite': 'favorite-border'}
                   color='green'/>
               }
-              title = {this.state.pressedPray?'1': '0'}
+              title = {this.state.pressedPray1?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedPray: !this.state.pressedPray})}}/>
+              onPress = {() => {this.setState({pressedPray1: !this.state.pressedPray1})}}/>
             </View>
           </View>
         </Card>
@@ -208,34 +219,34 @@ class MainSite extends Component {
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedFav?'favorite': 'favorite-border'}
+                  name = {this.state.pressedFav2?'favorite': 'favorite-border'}
                   color='red'/>
               }
-              title = {this.state.pressedFav?'1': '0'}
+              title = {this.state.pressedFav2?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedFav: !this.state.pressedFav})}}/>
+              onPress = {() => {this.setState({pressedFav2: !this.state.pressedFav2})}}/>
 
             <Button
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedSad?'favorite': 'favorite-border'}
+                  name = {this.state.pressedSad2?'favorite': 'favorite-border'}
                   color='yellow'/>
               }
-              title = {this.state.pressedSad?'1': '0'}
+              title = {this.state.pressedSad2?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedSad: !this.state.pressedSad})}}/>
+              onPress = {() => {this.setState({pressedSad2: !this.state.pressedSad2})}}/>
 
             <Button
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedPray?'favorite': 'favorite-border'}
+                  name = {this.state.pressedPray2?'favorite': 'favorite-border'}
                   color='green'/>
               }
-              title = {this.state.pressedPray?'1': '0'}
+              title = {this.state.pressedPray2?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedPray: !this.state.pressedPray})}}/>
+              onPress = {() => {this.setState({pressedPray2: !this.state.pressedPray2})}}/>
             </View>
           </View>
         </Card>
@@ -261,34 +272,34 @@ class MainSite extends Component {
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedFav?'favorite': 'favorite-border'}
+                  name = {this.state.pressedFav3?'favorite': 'favorite-border'}
                   color='red'/>
               }
-              title = {this.state.pressedFav?'1': '0'}
+              title = {this.state.pressedFav3?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedFav: !this.state.pressedFav})}}/>
+              onPress = {() => {this.setState({pressedFav3: !this.state.pressedFav3})}}/>
 
             <Button
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedSad?'favorite': 'favorite-border'}
+                  name = {this.state.pressedSad3?'favorite': 'favorite-border'}
                   color='yellow'/>
               }
-              title = {this.state.pressedSad?'1': '0'}
+              title = {this.state.pressedSad3?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedSad: !this.state.pressedSad})}}/>
+              onPress = {() => {this.setState({pressedSad3: !this.state.pressedSad3})}}/>
 
             <Button
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedPray?'favorite': 'favorite-border'}
+                  name = {this.state.pressedPray3?'favorite': 'favorite-border'}
                   color='green'/>
               }
-              title = {this.state.pressedPray?'1': '0'}
+              title = {this.state.pressedPray3?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedPray: !this.state.pressedPray})}}/>
+              onPress = {() => {this.setState({pressedPray3: !this.state.pressedPray3})}}/>
             </View>
           </View>
         </Card>
@@ -313,34 +324,34 @@ class MainSite extends Component {
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedFav?'favorite': 'favorite-border'}
+                  name = {this.state.pressedFav4?'favorite': 'favorite-border'}
                   color='red'/>
               }
-              title = {this.state.pressedFav?'1': '0'}
+              title = {this.state.pressedFav4?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedFav: !this.state.pressedFav})}}/>
+              onPress = {() => {this.setState({pressedFav4: !this.state.pressedFav4})}}/>
 
             <Button
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedSad?'favorite': 'favorite-border'}
+                  name = {this.state.pressedSad4?'favorite': 'favorite-border'}
                   color='yellow'/>
               }
-              title = {this.state.pressedSad?'1': '0'}
+              title = {this.state.pressedSad4?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedSad: !this.state.pressedSad})}}/>
+              onPress = {() => {this.setState({pressedSad4: !this.state.pressedSad4})}}/>
 
             <Button
               type = 'clear'
               icon={
                 <Icon
-                  name = {this.state.pressedPray?'favorite': 'favorite-border'}
+                  name = {this.state.pressedPray4?'favorite': 'favorite-border'}
                   color='green'/>
               }
-              title = {this.state.pressedPray?'1': '0'}
+              title = {this.state.pressedPray4?'1': '0'}
               buttonStyle = {{marginLeft: 5}}
-              onPress = {() => {this.setState({pressedPray: !this.state.pressedPray})}}/>
+              onPress = {() => {this.setState({pressedPray4: !this.state.pressedPray4})}}/>
             </View>
           </View>
         </Card>
