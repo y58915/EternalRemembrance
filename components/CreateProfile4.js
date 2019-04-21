@@ -8,8 +8,9 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {Button} from 'react-native-elements';
 
 class CreateProfile4 extends Component {
   render() {
@@ -53,14 +54,16 @@ class CreateProfile4 extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
-
-        <View style={styles.bottomButton}>
+        <View style={{marginTop: 30}}>
           <Text style={styles.later}>
             You may press 'Continue' to come back to this step at a later time.
           </Text>
+        </View>
+        <View style={styles.bottomButton}>
           <Button
             title="Continue"
             color="#0000FF"
+            containerStyle = {{marginTop: 20}}
             onPress={() => this.props.navigation.navigate('CreateProfile5')}/>
         </View>
       </View>
@@ -88,8 +91,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   bottomButton: {
+    backgroundColor: 'white',
+    height: 80,
     position: 'absolute',
-    bottom: '8%',
+    bottom: '0%',
     width: '100%',
   },
   method: {

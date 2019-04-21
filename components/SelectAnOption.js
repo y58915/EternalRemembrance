@@ -8,11 +8,9 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import CreateAProfile from './EnterCoupon';
-import PricingOptions from './PricingOptions';
-import GoToStore from './GoToStore';
+import {Button} from 'react-native-elements';
 
 
 class SelectAnOption extends Component {

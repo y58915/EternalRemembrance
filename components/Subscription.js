@@ -8,8 +8,9 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, Image, CheckBox} from 'react-native';
+import {StyleSheet, Text, View, TextInput, CheckBox} from 'react-native';
 import {createStackNavigator, createAppContainer, getParam} from 'react-navigation';
+import {Button} from 'react-native-elements';
 
 class Subscription extends Component {
   render() {

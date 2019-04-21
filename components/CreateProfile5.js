@@ -8,9 +8,10 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import ImagePicker from 'react-native-image-crop-picker';
+import {Button} from 'react-native-elements';
 
 class CreateProfile5 extends Component {
 
@@ -69,6 +70,7 @@ class CreateProfile5 extends Component {
           <Button
             title="Continue"
             color="#0000FF"
+            containerStyle = {{marginTop: 20}}
             onPress={() => this.props.navigation.navigate('CreateProfile6')}/>
         </View>
       </View>
@@ -96,8 +98,10 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
   bottomButton: {
+    backgroundColor: 'white',
+    height: 80,
     position: 'absolute',
-    bottom: '8%',
+    bottom: '0%',
     width: '100%',
   },
 });

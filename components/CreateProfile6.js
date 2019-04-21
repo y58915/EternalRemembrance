@@ -8,8 +8,9 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
+import {StyleSheet, Text, View, TextInput} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {Button} from 'react-native-elements';
 
 class CreateProfile6 extends Component {
   render() {
@@ -58,7 +59,8 @@ class CreateProfile6 extends Component {
           <Button
             title="Finish"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
+            containerStyle = {{marginTop: 20}}
+            onPress={() => this.props.navigation.navigate('MainSite')}/>
         </View>
       </View>
     );
@@ -85,8 +87,10 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   bottomButton: {
+    backgroundColor: 'white',
+    height: 80,
     position: 'absolute',
-    bottom: '8%',
+    bottom: '0%',
     width: '100%',
   },
   method: {

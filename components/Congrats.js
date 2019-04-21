@@ -8,8 +8,9 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, Image, CheckBox} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Image, CheckBox} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {Button} from 'react-native-elements';
 
 class Congrats extends Component {
   render() {

@@ -8,8 +8,9 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {Button} from 'react-native-elements';
 import CreateNewAccount from './CreateNewAccount';
 import SelectAnOption from './SelectAnOption';
 import EnterCoupon from './EnterCoupon';
@@ -56,7 +57,7 @@ class Login extends Component {
           <Button
             title="Sign In"
             color="#0000FF"
-            onPress={() => this.props.navigation.navigate('CreateProfile3')}/>
+            onPress={() => this.props.navigation.navigate('MainSite')}/>
         </View>
         <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('ForgotPassword')}>
           Forgot Password?

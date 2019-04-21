@@ -8,10 +8,9 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Button, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Image} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import PricingOptions from './PricingOptions';
-import FreeHostingCouponPage from './FreeHosting';
+import {Button} from 'react-native-elements';
 
 class EnterCoupon extends Component {
   render() {

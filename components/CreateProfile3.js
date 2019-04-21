@@ -8,8 +8,9 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Picker, Button} from 'react-native';
+import {StyleSheet, Text, View, Picker} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {Button} from 'react-native-elements';
 
 class CreateProfile3 extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class CreateProfile3 extends Component {
           <Button
             title="Continue"
             color="#0000FF"
+            containerStyle = {{marginTop: 20}}
             onPress={() => this.props.navigation.navigate('CreateProfile4')}/>
         </View>
       </View>
@@ -75,8 +77,10 @@ class CreateProfile3 extends Component {
      marginBottom: 30,
    },
    bottomButton: {
+     backgroundColor: 'white',
+     height: 80,
      position: 'absolute',
-     bottom: '8%',
+     bottom: '0%',
      width: '100%',
    },
  });

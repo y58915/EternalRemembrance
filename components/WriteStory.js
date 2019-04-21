@@ -101,9 +101,11 @@ class WriteStory extends Component {
 
 const styles = StyleSheet.create({
   bottomButton: {
+    backgroundColor: 'white',
+    height: 80,
     flexDirection: 'row',
     position: 'absolute',
-    bottom: '8%',
+    bottom: '0%',
     width: '100%',
   },
 });
