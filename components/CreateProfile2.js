@@ -34,6 +34,7 @@ class CreateProfile2 extends Component {
             <Button
               title="Invite"
               color="#0000FF"
+              buttonStyle = {{height: 35}}
               onPress={() => this.props.navigation.navigate('Empty')}/>
           </View>
         </View>
