@@ -15,7 +15,6 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 class MainSite extends Component {
   constructor(props) {
     super(props);
-    this.state = { Favorited: false }
     this.state = { Shared: false }
     this.state = { pressedFav: false }
     this.state = { pressedSad: false }
@@ -115,12 +114,12 @@ class MainSite extends Component {
           type = 'outline'
           icon={
             <Icon
-              name = {this.state.Favorited?'star': 'star-border'}
+              name = {this.state.Favorited?'share': 'share'}
               containerStyle = {{marginRight: 3}}/>
           }
-          title= {this.state.Favorited?'favorited': 'favorite'}
+          title= {this.state.Favorited?'shared': 'share'}
           buttonStyle = {{width: 120}}
-          onPress = {() => {this.setState({Favorited: !this.state.Favorited})}}/>
+          onPress = {() => {this.setState({Shared: !this.state.Shared})}}/>
         </View>
         <View
           style = {{
@@ -133,12 +132,11 @@ class MainSite extends Component {
           type = 'outline'
           icon={
             <Icon
-              name = {this.state.Shared?'share': 'share'}
-              containerStyle = {{marginRight: 3}}/>
+              name = 'note'
+              type = 'simple-line-icon'/>
           }
-          title= {this.state.Shared?'shared': 'share'}
-          buttonStyle = {{alignItems: 'baseline', width: 120}}
-          onPress = {() => {this.setState({Shared: !this.state.Shared})}}/>
+          buttonStyle = {{alignItems: 'baseline', width: 60}}
+          onPress = {() => this.props.navigation.navigate('WriteStory')}/>
         </View>
         </View>
 
