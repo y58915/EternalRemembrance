@@ -17,7 +17,7 @@ class CreateProfile6 extends Component {
       <View style={styles.container}>
         <View style={{marginTop: 30}}>
           <Text style={styles.detail}>
-            Step 4:
+            Step 6:
           </Text>
         </View>
         <View style={{flexDirection: 'row', marginBottom: 20}}>

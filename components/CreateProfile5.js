@@ -26,7 +26,7 @@ class CreateProfile5 extends Component {
       <View style={styles.container}>
         <View style={{marginTop: 30}}>
           <Text style={styles.detail}>
-            Step 4:
+            Step 5:
           </Text>
         </View>
         <View style={{flexDirection: 'row'}}>

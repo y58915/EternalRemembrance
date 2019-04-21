@@ -12,6 +12,11 @@ import {StyleSheet, Text, View, Picker, Button} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 class CreateProfile3 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {item: ''};
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -24,9 +29,8 @@ class CreateProfile3 extends Component {
         </Text>
         <Picker
           style={styles.picker}
-          onValueChange={(itemValue, itemIndex) =>
-            this.setState({language: itemValue})
-          }>
+          selectedValue = {this.state.item}
+          onValueChange= {(label) => this.setState({item: label})}>
           <Picker.Item label="Pubilc" value="Pubilc" />
           <Picker.Item label="Only My Friends can See" value="Friends" />
           <Picker.Item label="Private" value="Private" />
