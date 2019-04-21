@@ -80,7 +80,7 @@ class CreateProfile3 extends Component {
      backgroundColor: 'white',
      height: 80,
      position: 'absolute',
-     bottom: '0%',
+     bottom: '5%',
      width: '100%',
    },
  });

@@ -8,12 +8,35 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, Image, ScrollView} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import {Button} from 'react-native-elements';
+import {Button, ListItem, Avatar} from 'react-native-elements';
 
 class CreateProfile2 extends Component {
   render() {
+    const list = [
+      {
+        name: 'Johe Doe',
+        relationship: 'Son',
+        avatar: null,
+      },
+      {
+        name: 'Johe Doe',
+        relationship: 'Daughter',
+        avatar: null,
+      },
+      {
+        name: 'Johe Doe',
+        relationship: 'Grandson',
+        avatar: null,
+      },
+      {
+        name: 'Johe Doe',
+        relationship: 'Granddaughter',
+        avatar: null,
+      },
+    ]
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -23,8 +46,25 @@ class CreateProfile2 extends Component {
         <Text style={styles.instructions}>
           Invite administrators to contribute and have special access to this page.
         </Text>
-
-        <View style={{flexDirection: 'row'}}>
+        <View style = {{height: 220}}>
+        <ScrollView>
+        {
+          list.map((item, i) => (
+            <ListItem
+              key={i}
+              title={item.name}
+              subtitle={item.relationship}
+              leftAvatar={<Avatar
+                size = 'small'
+                rounded
+                source = {item.avatar? item.avatar: require('../resources/DefaultProfile.png')}
+                />}
+            />
+          ))
+        }
+        </ScrollView>
+        </View>
+        <View style={{flexDirection: 'row', marginTop: 30}}>
           <View style={{flex: 3}}>
             <TextInput
               style={styles.inputblock}
@@ -37,12 +77,6 @@ class CreateProfile2 extends Component {
               buttonStyle = {{height: 35}}
               onPress={() => this.props.navigation.navigate('Empty')}/>
           </View>
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="Add New Admin"
-            color="#0000FF"
-            onPress={() => this.props.navigation.navigate('Empty')}/>
         </View>
         <View style={styles.bottomButton}>
           <Button
@@ -70,7 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 80,
     position: 'absolute',
-    bottom: '0%',
+    bottom: '5%',
     width: '100%',
   },
   welcome: {

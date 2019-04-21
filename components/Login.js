@@ -59,7 +59,7 @@ class Login extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('MainSite')}/>
         </View>
-        <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('CreateProfile2')}>
+        <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('CreateProfile1')}>
           Forgot Password?
         </Text>
         <Text style={styles.noaccount}>Don't have an account?</Text>

@@ -8,11 +8,18 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, CheckBox} from 'react-native';
+import {StyleSheet, Text, View, TextInput} from 'react-native';
 import {createStackNavigator, createAppContainer, getParam} from 'react-navigation';
-import {Button} from 'react-native-elements';
+import {Button, CheckBox} from 'react-native-elements';
 
 class Subscription extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false,
+    };
+  }
+
   render() {
     const suboption = this.props.navigation.getParam('option');
 
@@ -54,9 +61,13 @@ class Subscription extends Component {
           placeholder=' John Doe'>
         </TextInput>
         </View>
-        <View style={{flexDirection: 'row'}}>
-          <CheckBox style={{marginTop: 2}}/>
-          <Text style={styles.instructions}>SAVE CARD</Text>
+        <View style={{marginLeft: -20}}>
+          <CheckBox
+            title='Save Card'
+            containerStyle = {{borderWidth: 0, backgroundColor: 'white'}}
+            checked={this.state.checked}
+            onPress={() => this.setState({checked: !this.state.checked})}
+          />
         </View>
         <View style={styles.button}>
           <Button

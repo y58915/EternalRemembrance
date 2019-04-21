@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     height: 80,
     flexDirection: 'row',
     position: 'absolute',
-    bottom: '0%',
+    bottom: '5%',
     width: '100%',
   },
 });
