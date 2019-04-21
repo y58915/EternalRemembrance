@@ -1,6 +1,9 @@
 package com.eternal;
 
 import com.facebook.react.ReactActivity;
+import com.imagepicker.ImagePickerPackage;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
