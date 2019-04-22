@@ -33,6 +33,18 @@ class MainSite extends Component {
   }
 
   render() {
+
+    const name = this.props.navigation.getParam('newname', 'Diego Moreno');
+
+    const dob = this.props.navigation.getParam('newdob', '04/07/1977');
+
+    const dod = this.props.navigation.getParam('newdod', '01/11/2016');
+
+    const loc = this.props.navigation.getParam('newloc', 'Chico, CA');
+
+    const intro = this.props.navigation.getParam
+      ('intro', 'A friend to many, and the richest man that most of us have ever met.');
+
     return (
       <View style = {{flex: 1}}>
       <ScrollView>
@@ -45,7 +57,13 @@ class MainSite extends Component {
               round = 'false'
               source = {require('../resources/test1.jpg')}
               containerStyle = {{marginTop: 15, marginLeft: 15, width: 150, height: 150}}
-              />
+              onPress = {() => this.props.navigation.navigate('EditProfile', {
+                oldname: name,
+                olddob: dob,
+                olddod: dod,
+                oldloc: loc,
+                oldintro: intro,
+              })}/>
               <View
                 style={{
                   flex: 1,
@@ -58,7 +76,7 @@ class MainSite extends Component {
                     color: 'white',
                     fontSize: 25,
                     }}>
-                  Diego Moreno
+                  {name}
                 </Text>
                 <Text
                   style={{
@@ -66,7 +84,7 @@ class MainSite extends Component {
                     fontSize: 15,
                     marginTop: 7,
                     }}>
-                  04/07/1977 - 01/11/2016
+                  {dob} - {dod}
                 </Text>
                 <Text
                   style={{
@@ -74,7 +92,7 @@ class MainSite extends Component {
                     fontSize: 15,
                     marginTop: 4,
                     }}>
-                  Chico, CA
+                  {loc}
                 </Text>
               </View>
           </View>
@@ -97,17 +115,18 @@ class MainSite extends Component {
                 flex: 1,
                 marginTop: 70,
                 marginRight: 10,
-                marginLeft: 70,
+                marginLeft: 60,
                 alignItems: 'flex-end',
               }}>
               <Text
                 style={{
                   color: 'white',
+                  fontWeight: 'bold',
                   fontSize: 14,
                   marginTop: 4,
                   textAlign: 'right',
                 }}>
-                A friend to many, and the richest man that most of us have ever met.
+                {intro}
               </Text>
             </View>
           </View>

@@ -30,6 +30,7 @@ import CreateProfile6 from './CreateProfile6';
 import MainSite from './MainSite';
 import WriteStory from './WriteStory';
 import MainSite2 from './MainSite2';
+import EditProfile from './EditProfile';
 
 class Login extends Component {
   render() {
@@ -59,7 +60,7 @@ class Login extends Component {
             color="#0000FF"
             onPress={() => this.props.navigation.navigate('MainSite')}/>
         </View>
-        <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('CreateProfile1')}>
+        <Text style={styles.forgot} onPress={() => this.props.navigation.navigate('EditProfile')}>
           Forgot Password?
         </Text>
         <Text style={styles.noaccount}>Don't have an account?</Text>
@@ -150,6 +151,7 @@ const LoginContainer = createStackNavigator({
   MainSite: {screen: MainSite},
   WriteStory: {screen: WriteStory},
   MainSite2: {screen: MainSite2},
+  EditProfile: {screen: EditProfile},
 });
 
 const App = createAppContainer(LoginContainer);
